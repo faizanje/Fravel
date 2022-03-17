@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddShippingAddress">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="@dimen/entry_fields_diff"
+            android:layout_marginRight="@dimen/entry_fields_diff"
+            android:hint="Name \n Enter Your Name"></EditText>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="@dimen/entry_fields_diff"
+            android:layout_marginRight="@dimen/entry_fields_diff"
+            android:hint="Address \n Enter Your Address"></EditText>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="@dimen/entry_fields_diff"
+            android:layout_marginRight="@dimen/entry_fields_diff"
+            android:hint="City \n Enter Your City"></EditText>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="@dimen/entry_fields_diff"
+            android:layout_marginRight="@dimen/entry_fields_diff"
+            android:hint="State/Province \n Enter Your State/Provnce/Region"></EditText>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="@dimen/entry_fields_diff"
+            android:layout_marginRight="@dimen/entry_fields_diff"
+            android:hint="Zip \n Enter Your Area Zip Code"></EditText>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="@dimen/entry_fields_diff"
+            android:layout_marginRight="@dimen/entry_fields_diff"
+            android:hint="Country \n Enter Your Country of Residence"></EditText>
+
+
+
+        <Button
+            android:id="@+id/btn_add_shipping"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/filled_btn_general"
+            android:text="Confirm Address" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

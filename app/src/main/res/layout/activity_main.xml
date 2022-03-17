@@ -20,7 +20,7 @@
             android:layout_marginTop="50dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/fravellmainlogo" />
+            app:srcCompat="@drawable/fravelllogopng" />
 
     </LinearLayout>
 
@@ -46,6 +46,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/enterUsername"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="@dimen/entry_fields_diff"
@@ -53,6 +54,7 @@
 
 
         <EditText
+            android:id="@+id/enterEmail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="@dimen/entry_fields_diff"
@@ -60,6 +62,7 @@
 
 
         <EditText
+            android:id="@+id/enterPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="@dimen/entry_fields_diff"
@@ -104,21 +107,32 @@
 
             >
 
-    <!--        <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                app:srcCompat="@drawable/google_logo" />
+            <!--        <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        app:srcCompat="@drawable/google_logo" />
 
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="40dp"
-                android:layout_marginLeft="40dp"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/fravell_logo_png" />-->
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="40dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/fravell_logo_png" />-->
         </LinearLayout>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/Spr_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="?android:attr/progressBarStyleLarge"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,7 +20,7 @@
             android:layout_marginTop="50dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/fravellmainlogo" />
+            app:srcCompat="@drawable/fravelllogopng" />
 
     </LinearLayout>
 
@@ -47,6 +47,7 @@
 
 
         <EditText
+            android:id="@+id/Email"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="@dimen/entry_fields_diff"
@@ -54,6 +55,7 @@
 
 
         <EditText
+            android:id="@+id/Password"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="@dimen/entry_fields_diff"
@@ -125,5 +127,19 @@
         </LinearLayout>
 
     </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/Pr_Bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="?android:attr/progressBarStyleLarge"
+        android:visibility="gone">
+
+    </ProgressBar>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

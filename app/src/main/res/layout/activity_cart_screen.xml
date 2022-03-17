@@ -13,6 +13,7 @@
         android:orientation="vertical">
 
         <GridLayout
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="350dp"
             android:rowCount="2">
@@ -32,7 +33,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="@dimen/entry_fields_diff"
-                        tools:srcCompat="@tools:sample/avatars" />
+                        android:src="@drawable/dates" />
 
                     <LinearLayout
                         android:layout_width="155dp"
@@ -46,7 +47,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="20dp"
-                            android:text="Fruit Name"
+                            android:text="Dates"
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -142,7 +143,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="@dimen/entry_fields_diff"
-                        tools:srcCompat="@tools:sample/avatars" />
+                        android:src="@drawable/dry" />
 
                     <LinearLayout
                         android:layout_width="155dp"
@@ -156,7 +157,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="20dp"
-                            android:text="Fruit Name"
+                            android:text="Dry Fruit"
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -266,7 +267,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="90dp">
+            android:layout_marginTop="70dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -321,6 +322,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="52$"
+                android:layout_gravity="right"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="25sp"
@@ -328,9 +330,12 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/btn_checkout_cart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
             android:background="@drawable/filled_btn_general"
             android:layout_marginRight="20dp"
             android:text="CHECK OUT"></Button>
@@ -349,35 +354,37 @@
             android:layout_marginRight="10dp"
             android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="11dp"
-            android:orientation="vertical">
-
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/home_screen_btn"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/home_icon" />
+                android:layout_marginLeft="11dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="Home"
-                android:textColor="#000"
-                android:textSize="10sp" />
-        </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/home_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Home"
+                    android:textColor="#000"
+                    android:textSize="10sp" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
+                android:id="@+id/messages_screen_btn"
                 android:orientation="vertical">
 
 
@@ -394,7 +401,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
-                    android:text="Messages"
+                    android:text="Custom"
                     android:textColor="#000"
                     android:textSize="10sp" />
             </LinearLayout>
@@ -403,7 +410,8 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/cart_screen_btn">
 
 
                 <ImageView
@@ -428,7 +436,8 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/notifications_btn">
 
 
                 <ImageView
@@ -453,7 +462,8 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/profile_btn">
 
 
                 <ImageView

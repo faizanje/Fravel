@@ -50,7 +50,7 @@
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:src="@drawable/salman" />
 
                 <LinearLayout
                     android:layout_width="160dp"
@@ -121,7 +121,7 @@
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:src="@drawable/haris"/>
 
                 <LinearLayout
                     android:layout_width="160dp"
@@ -192,7 +192,7 @@
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:src="@drawable/haris" />
 
                 <LinearLayout
                     android:layout_width="160dp"
@@ -264,7 +264,7 @@
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
-                    tools:srcCompat="@tools:sample/avatars" />
+                   android:src="@drawable/sabir" />
 
                 <LinearLayout
                     android:layout_width="160dp"
@@ -336,7 +336,7 @@
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:src="@drawable/wajeh"/>
 
                 <LinearLayout
                     android:layout_width="160dp"
@@ -408,7 +408,7 @@
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:src="@drawable/hanan" />
 
                 <LinearLayout
                     android:layout_width="160dp"
@@ -492,6 +492,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/home_screen_btn"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="11dp"
@@ -520,6 +521,7 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
+                android:id="@+id/messages_screen_btn"
                 android:orientation="vertical">
 
 
@@ -536,7 +538,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
-                    android:text="Messages"
+                    android:text="Cutom"
                     android:textColor="#000"
                     android:textSize="10sp" />
             </LinearLayout>
@@ -545,7 +547,8 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/cart_screen_btn">
 
 
                 <ImageView
@@ -570,7 +573,8 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/notifications_btn">
 
 
                 <ImageView
@@ -595,7 +599,8 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/profile_btn">
 
 
                 <ImageView
@@ -619,6 +624,5 @@
 
         </LinearLayout>
     </RelativeLayout>
-
 
 </RelativeLayout>

@@ -7,19 +7,21 @@
     tools:context=".ProductDetailPage">
 
     <LinearLayout
+        android:id="@+id/productdetailpagemainlinear"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
 =======
 >>>>>>> origin/master
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="match_parent"
-        android:layout_height="175dp"
-        app:srcCompat="@drawable/account_circle"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="44dp" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            app:srcCompat="@drawable/dates"
+            android:layout_marginTop="50dp"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,8 +57,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pine Nuts"
-                android:textSize="30sp"
+                android:text="Special Dates"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_marginLeft="10dp"/>
@@ -105,6 +107,7 @@ Short Dress jkdfhjkgaskfhdaklhdfkh kajdfhajklsd askfhasdjkfh lakjshdfjklasdf kah
             android:layout_marginTop="20dp">
 
             <TextView
+                android:id="@+id/reviewsbtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Reviews (67)"
@@ -127,6 +130,7 @@ Short Dress jkdfhjkgaskfhdaklhdfkh kajdfhajklsd askfhasdjkfh lakjshdfjklasdf kah
         </LinearLayout>
 
         <Button
+            android:id="@+id/addtocartproductbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"

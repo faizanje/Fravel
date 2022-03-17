@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Fravell/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/account_circle.xml" value="0.2203125" />
+        <entry key="..\:/Fravell/app/src/main/res/drawable/addphotoicon.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/allmessagesicon.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/arrow_icon.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/cart_btns.xml" value="0.2203125" />
@@ -13,6 +14,7 @@
         <entry key="..\:/Fravell/app/src/main/res/drawable/doubleticks.xml" value="0.4150390625" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/favorites.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/filled_btn_general.xml" value="0.2203125" />
+        <entry key="..\:/Fravell/app/src/main/res/drawable/fravellmainlogo.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/helpicon.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/home_icon.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/ic_account_circle_black_24dp.xml" value="0.2203125" />
@@ -21,6 +23,7 @@
         <entry key="..\:/Fravell/app/src/main/res/drawable/ic_delete_black_24dp.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/ic_info_black_24dp.xml" value="0.2203125" />
+        <entry key="..\:/Fravell/app/src/main/res/drawable/ic_launcher1_background.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/ic_manage_accounts_black_24dp.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2203125" />
@@ -28,6 +31,7 @@
         <entry key="..\:/Fravell/app/src/main/res/drawable/ic_shopping_cart_black_24dp.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/image_border.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/img.xml" value="0.2203125" />
+        <entry key="..\:/Fravell/app/src/main/res/drawable/likeicon.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/my_btn.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/my_btn_card.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/newmessage.xml" value="0.2203125" />
@@ -40,27 +44,45 @@
         <entry key="..\:/Fravell/app/src/main/res/drawable/spammessageicon.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/starredmessageicon.xml" value="0.2203125" />
         <entry key="..\:/Fravell/app/src/main/res/drawable/unreadmessageicon.xml" value="0.2203125" />
+        <entry key="..\:/Fravell/app/src/main/res/drawable/writereviewicon.xml" value="0.2203125" />
+        <entry key="..\:/Fravell/app/src/main/res/layout/activity_add_new_card.xml" value="0.19010416666666666" />
+        <entry key="..\:/Fravell/app/src/main/res/layout/activity_add_shipping_address.xml" value="0.2028985507246377" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_cart_screen.xml" value="0.16" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_chat_screen.xml" value="0.20416666666666666" />
+        <entry key="..\:/Fravell/app/src/main/res/layout/activity_checkout_screen.xml" value="0.19010416666666666" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_custom_order_details.xml" value="0.25" />
+        <entry key="..\:/Fravell/app/src/main/res/layout/activity_demo_checkout.xml" value="0.19010416666666666" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_email_veri.xml" value="0.15217391304347827" />
-        <entry key="..\:/Fravell/app/src/main/res/layout/activity_enroute_fravellers.xml" value="0.22" />
+        <entry key="..\:/Fravell/app/src/main/res/layout/activity_enroute_fravellers.xml" value="0.1" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_filter_message.xml" value="0.2028985507246377" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_forgot_pass.xml" value="0.15217391304347827" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_forgot_pin_veri.xml" value="0.15217391304347827" />
+        <entry key="..\:/Fravell/app/src/main/res/layout/activity_home_screen.xml" value="0.12" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_login.xml" value="0.15217391304347827" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_messages_main_screen.xml" value="0.22" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_nav_header.xml" value="0.2028985507246377" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_navigation_drawer.xml" value="0.19010416666666666" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_new_pass_enter.xml" value="0.20416666666666666" />
+        <entry key="..\:/Fravell/app/src/main/res/layout/activity_new_review_screen.xml" value="0.2028985507246377" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_notifications.xml" value="0.2028985507246377" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_num_veri1.xml" value="0.15217391304347827" />
+        <entry key="..\:/Fravell/app/src/main/res/layout/activity_order_success_screen.xml" value="0.2028985507246377" />
+        <entry key="..\:/Fravell/app/src/main/res/layout/activity_payment_methods.xml" value="0.19010416666666666" />
+        <entry key="..\:/Fravell/app/src/main/res/layout/activity_payment_pass_confirm_screen.xml" value="0.2028985507246377" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_phone_num_veri.xml" value="0.12" />
-        <entry key="..\:/Fravell/app/src/main/res/layout/activity_product_detail_page.xml" value="0.25" />
+        <entry key="..\:/Fravell/app/src/main/res/layout/activity_product_detail_page.xml" value="0.1" />
+        <entry key="..\:/Fravell/app/src/main/res/layout/activity_reviews_detail_page.xml" value="0.25" />
         <entry key="..\:/Fravell/app/src/main/res/layout/activity_to_new_message.xml" value="0.2028985507246377" />
+        <entry key="..\:/Fravell/app/src/main/res/layout/activity_write_review_screen.xml" value="0.19010416666666666" />
+        <entry key="..\:/Fravell/app/src/main/res/layout/fragment_read_all.xml" value="0.19010416666666666" />
+        <entry key="..\:/Fravell/app/src/main/res/layout/fragment_reviews.xml" value="0.22" />
         <entry key="..\:/Fravell/app/src/main/res/menu/main.xml" value="0.20416666666666666" />
         <entry key="..\:/Fravell/app/src/main/res/menu/notifications.xml" value="0.20416666666666666" />
+        <entry key="..\:/Fravell/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1125" />
+        <entry key="..\:/Fravell/app/src/main/res/mipmap-anydpi-v26/ic_launcher1.xml" value="0.1125" />
+        <entry key="..\:/Fravell/app/src/main/res/mipmap-anydpi-v26/ic_launcher1_round.xml" value="0.1125" />
+        <entry key="..\:/Fravell/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1125" />
       </map>
     </option>
   </component>

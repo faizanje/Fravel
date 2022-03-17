@@ -4,24 +4,44 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/fravellmainlogo"
+        android:icon="@drawable/fravelllogopng"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fravell">
         <activity
-            android:name=".ProductDetailPage"
-<<<<<<< HEAD
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-=======
+            android:name=".OrderSuccessScreen"
             android:exported="false" />
->>>>>>> origin/master
+        <activity
+            android:name=".AddShippingAddress"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentPassConfirmScreen"
+            android:exported="false" />
+        <activity
+            android:name=".AddNewCard"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentMethods"
+            android:exported="false"
+            android:label="Payment Methods" />
+        <activity
+            android:name=".CheckoutScreen"
+            android:exported="false"
+            android:label="Checkout" />
+        <activity
+            android:name=".HomeScreen"
+            android:exported="true"/>
+
+        <activity
+            android:name=".WriteReviewScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ReviewsDetailPage"
+            android:exported="false" />
+        <activity
+            android:name=".ProductDetailPage"
+            android:exported="false" />
         <activity
             android:name=".NavHeader"
             android:exported="false" />
@@ -47,7 +67,13 @@
             android:label="Cart" />
         <activity
             android:name=".EnrouteFravellers"
-            android:exported="false" />
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".CustomOrderDetails"
             android:exported="false"
@@ -57,13 +83,16 @@
             android:label="New PassWord" />
         <activity android:name=".ForgotPinVeri" />
         <activity android:name=".ForgotPass" />
-        <activity android:name=".Login" />
+        <activity android:name=".Login"
+            android:exported="true">
+
+        </activity>
         <activity android:name=".NumVeri1" />
         <activity android:name=".PhoneNumVeri" />
         <activity android:name=".EmailVeri" />
-        <activity android:name=".MainActivity"
-            android:exported="true"/>
-
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
