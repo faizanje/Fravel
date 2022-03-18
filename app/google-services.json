@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "403201785303",
+    "project_id": "fravell-56f25",
+    "storage_bucket": "fravell-56f25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403201785303:android:00f4043e43b0ddbcdf5f92",
+        "android_client_info": {
+          "package_name": "com.example.fravell"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403201785303-bio9jfnkv41qnbap1ga8di3nq4e3f9ja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDFHrQksCdcI1GPeNvrlmxABkjPuW7ckY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403201785303-bio9jfnkv41qnbap1ga8di3nq4e3f9ja.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
