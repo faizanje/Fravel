@@ -17,6 +17,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <EditText
+            android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_marginTop="30dp"
             android:layout_height="70dp"
@@ -25,6 +26,7 @@
             android:hint="Name \n Enter Your Name"></EditText>
 
         <EditText
+            android:id="@+id/etAddress"
             android:layout_width="match_parent"
             android:layout_marginTop="15dp"
             android:layout_height="70dp"
@@ -33,6 +35,7 @@
             android:hint="Address \n Enter Your Address"></EditText>
 
         <EditText
+            android:id="@+id/etCity"
             android:layout_width="match_parent"
             android:layout_marginTop="15dp"
             android:layout_height="70dp"
@@ -41,6 +44,7 @@
             android:hint="City \n Enter Your City"></EditText>
 
         <EditText
+            android:id="@+id/etProvince"
             android:layout_width="match_parent"
             android:layout_marginTop="15dp"
             android:layout_height="70dp"
@@ -49,6 +53,7 @@
             android:hint="State/Province \n Enter Your State/Provnce/Region"></EditText>
 
         <EditText
+            android:id="@+id/etZipCode"
             android:layout_width="match_parent"
             android:layout_marginTop="15dp"
             android:layout_height="70dp"
@@ -58,6 +63,7 @@
 
 
         <EditText
+            android:id="@+id/etCountry"
             android:layout_width="match_parent"
             android:layout_marginTop="15dp"
             android:layout_height="70dp"
@@ -68,7 +74,7 @@
 
 
         <Button
-            android:id="@+id/btn_add_shipping"
+            android:id="@+id/btnConfirmAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
