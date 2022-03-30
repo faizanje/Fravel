@@ -44,7 +44,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="@dimen/entry_fields_diff"
-                        android:src="@drawable/haris" />
+                        android:src="@drawable/user_avatar_in_suit_png" />
 
                     <TextView
                         android:id="@+id/textView7"
@@ -154,7 +154,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="@dimen/entry_fields_diff"
-                        android:src="@drawable/haris" />
+                        android:src="@drawable/user_avatar_in_suit_png" />
 
                     <TextView
                         android:id="@+id/textView10"
@@ -255,7 +255,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="@dimen/entry_fields_diff"
-                       android:src="@drawable/haris" />
+                       android:src="@drawable/user_avatar_in_suit_png" />
 
                     <TextView
                         android:id="@+id/textView15"
@@ -356,7 +356,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="@dimen/entry_fields_diff"
-                        android:src="@drawable/haris" />
+                        android:src="@drawable/user_avatar_in_suit_png" />
 
                     <TextView
                         android:id="@+id/textView17"
@@ -457,7 +457,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="@dimen/entry_fields_diff"
-                        android:src="@drawable/haris"/>
+                        android:src="@drawable/user_avatar_in_suit_png"/>
 
                     <TextView
                         android:id="@+id/textView18"

@@ -7,22 +7,23 @@
     tools:context=".HomeScreen">
 
 
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginBottom="55dp">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="55dp">
 
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
                 <LinearLayout
@@ -38,673 +39,149 @@
                         android:layout_width="330dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:ems="10"
                         android:layout_marginTop="10dp"
-                        android:textColorHint="@color/main"
+                        android:ems="10"
                         android:hint="Search"
                         android:inputType="text"
+                        android:textColorHint="@color/main"
                         android:textSize="16sp" />
 
 
-                    <TextView
+                    <androidx.cardview.widget.CardView
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/main"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginTop="15dp"
-                        android:textAlignment="center"
-                        android:background="@color/main"
-                        android:text="Our Freight Forwarders are at your service, Order now to get your goods delivered as soon as you order them."
-                        android:textColor="@color/white"
-                        android:textSize="27sp"></TextView>
+                        app:contentPadding="8dp"
+                        >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Our Freight Forwarders are at your service, Order now to get your goods delivered as soon as you order them."
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="24sp" />
 
 
+                    </androidx.cardview.widget.CardView>
 
 
-                    <LinearLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="right"
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="2dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginRight="160dp"
                             android:text="Just For You"
                             android:textColor="@color/black"
+                            android:textSize="25sp"
                             android:textStyle="bold"
-                            android:textSize="25sp"></TextView>
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:layout_width="70dp"
+                            android:id="@+id/tvViewAllJustForYou"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginTop="5dp"
                             android:text="View All"
+                            android:textSize="15sp"
                             android:textStyle="bold"
-                            android:textSize="15sp"></TextView>
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewJustForYou"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="260dp"
-                        android:layout_marginRight="10dp"
-                        android:orientation="vertical">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="160dp"
-                            android:layout_marginBottom="10dp"
-                            android:orientation="horizontal"
-                            android:id="@+id/btn_justforyou">
-
-
-
-                            <androidx.cardview.widget.CardView
-
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginRight="5dp"
-                                android:layout_weight="1">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="vertical">
-
-                                    <ImageView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="103dp"
-                                        android:src="@drawable/apricots"></ImageView>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Raaz"
-                                        android:layout_marginLeft="15dp"
-                                        android:textSize="10sp"
-                                        />
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="2dp"
-                                        android:textColor="@color/black"
-                                        android:textAlignment="center"
-                                        android:text="Special Dates"
-                                        android:textSize="15dp"
-                                        android:textStyle="bold"/>
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        >
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="$22"
-                                            android:layout_marginLeft="15dp"
-                                            android:textSize="15sp"
-                                            android:textStyle="bold"
-                                            />
-
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="$19"
-                                            android:textSize="15sp"
-                                            android:textStyle="bold"
-                                            android:textColor="@color/main"
-                                            android:layout_marginLeft="5dp"/>
-
-                                    </LinearLayout>
-
-
-                                </LinearLayout>
-
-
-                            </androidx.cardview.widget.CardView>
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/btn_servic"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="5dp"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="vertical">
-
-                                    <ImageView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="103dp"
-                                        android:src="@drawable/dry"></ImageView>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Brown Bing"
-                                        android:layout_marginLeft="15dp"
-                                        android:textSize="10sp"
-                                        />
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="2dp"
-                                        android:textColor="@color/black"
-                                        android:textAlignment="center"
-                                        android:text="Pine Nuta"
-                                        android:textSize="15dp"
-                                        android:textStyle="bold"/>
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        >
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="$22"
-                                            android:layout_marginLeft="15dp"
-                                            android:textSize="15sp"
-                                            android:textStyle="bold"
-                                            />
-
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="$19"
-                                            android:textSize="15sp"
-                                            android:textStyle="bold"
-                                            android:textColor="@color/main"
-                                            android:layout_marginLeft="5dp"/>
-
-                                    </LinearLayout>
-
-
-                                </LinearLayout>
-
-                            </androidx.cardview.widget.CardView>
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/btn_services"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="5dp"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="vertical">
-
-                                    <ImageView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="103dp"
-                                        android:src="@drawable/almonds"></ImageView>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Wonder"
-                                        android:layout_marginLeft="15dp"
-                                        android:textSize="10sp"
-                                        />
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="2dp"
-                                        android:textColor="@color/black"
-                                        android:textAlignment="center"
-                                        android:text="Almond"
-                                        android:textSize="15dp"
-                                        android:textStyle="bold"/>
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        >
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="$22"
-                                            android:layout_marginLeft="15dp"
-                                            android:textSize="15sp"
-                                            android:textStyle="bold"
-                                            />
-
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="$19"
-                                            android:textSize="15sp"
-                                            android:textStyle="bold"
-                                            android:textColor="@color/main"
-                                            android:layout_marginLeft="5dp"/>
-
-                                    </LinearLayout>
-
-
-                                </LinearLayout>
-                            </androidx.cardview.widget.CardView>
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:orientation="vertical">
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
                             android:text="Category"
                             android:textColor="@color/black"
-                            android:textSize="25dp"
-                            android:textStyle="bold">
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                        </TextView>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/tvViewAllCategory"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="10dp"
-                            android:orientation="vertical"
-                            android:id="@+id/btn_category"
-                            >
+                            android:text="View All"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="160dp"
-                                android:layout_marginBottom="10dp"
-                                android:orientation="horizontal">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginRight="5dp"
-                                    android:layout_weight="1">
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:orientation="vertical">
-
-                                        <ImageView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="103dp"
-                                            android:src="@drawable/shoes"></ImageView>
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="2dp"
-                                            android:text="Shoes"
-                                            android:layout_marginTop="15dp"
-                                            android:textAlignment="center"
-                                            android:textColor="@color/black"
-                                            android:textSize="15dp"
-                                            android:textStyle="bold" />
-
-
-                                    </LinearLayout>
-
-
-                                </androidx.cardview.widget.CardView>
-
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_gravity="center"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_weight="1"
-                                    android:orientation="vertical">
-
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:orientation="vertical">
-
-                                        <ImageView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="103dp"
-                                            android:src="@drawable/sports"></ImageView>
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="2dp"
-                                            android:text="Sports"
-                                            android:layout_marginTop="15dp"
-                                            android:textAlignment="center"
-                                            android:textColor="@color/black"
-                                            android:textSize="15dp"
-                                            android:textStyle="bold" />
-
-
-                                    </LinearLayout>
-
-
-                                </androidx.cardview.widget.CardView>
-
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_gravity="center"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_weight="1"
-                                    android:orientation="vertical">
-
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:orientation="vertical">
-
-                                        <ImageView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="103dp"
-                                            android:src="@drawable/dry"></ImageView>
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="2dp"
-                                            android:text="Dry Fruits"
-                                            android:layout_marginTop="15dp"
-                                            android:textAlignment="center"
-                                            android:textColor="@color/black"
-                                            android:textSize="15dp"
-                                            android:textStyle="bold" />
-
-
-                                    </LinearLayout>
-
-
-                                </androidx.cardview.widget.CardView>
-
-
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_gravity="center"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_weight="1"
-                                    android:orientation="vertical">
-
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:orientation="vertical">
-
-                                        <ImageView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="103dp"
-                                            android:src="@drawable/beauty"></ImageView>
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="2dp"
-                                            android:text="Beauty"
-                                            android:layout_marginTop="15dp"
-                                            android:textAlignment="center"
-                                            android:textColor="@color/black"
-                                            android:textSize="15dp"
-                                            android:textStyle="bold" />
-
-
-                                    </LinearLayout>
-
-
-                                </androidx.cardview.widget.CardView>
-                            </LinearLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:orientation="vertical">
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginLeft="10dp"
                             android:text="New"
                             android:textColor="@color/black"
-                            android:textSize="25dp"
-                            android:textStyle="bold">
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                        </TextView>
+                        <TextView
+                            android:id="@+id/tvViewAllNew"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="View All"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                       <LinearLayout
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewNew"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
-                           android:id="@+id/btn_new1"
-                        android:orientation="vertical">
+                        android:layout_height="wrap_content" />
 
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="160dp"
-                            android:layout_marginBottom="10dp"
-                            android:orientation="horizontal">
-
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginRight="5dp"
-                                android:layout_weight="1">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="vertical">
-
-                                    <ImageView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="103dp"
-                                        android:src="@drawable/mouse"></ImageView>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Bloody"
-                                        android:layout_marginLeft="15dp"
-                                        android:textSize="10sp"
-                                        />
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="2dp"
-                                        android:textColor="@color/black"
-                                        android:textAlignment="center"
-                                        android:text="Mouse"
-                                        android:textSize="15dp"
-                                        android:textStyle="bold"/>
-
-
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="$19"
-                                            android:textSize="15sp"
-                                            android:textStyle="bold"
-                                            android:textColor="@color/main"
-                                            android:layout_marginLeft="15dp"/>
-
-
-
-                                </LinearLayout>
-
-
-                            </androidx.cardview.widget.CardView>
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="5dp"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="vertical">
-
-                                    <ImageView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="103dp"
-                                        android:src="@drawable/dates"></ImageView>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Bloody"
-                                        android:layout_marginLeft="15dp"
-                                        android:textSize="10sp"
-                                        />
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="2dp"
-                                        android:textColor="@color/black"
-                                        android:textAlignment="center"
-                                        android:text="Dates"
-                                        android:textSize="15dp"
-                                        android:textStyle="bold"/>
-
-
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="$19"
-                                        android:textSize="15sp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/main"
-                                        android:layout_marginLeft="15dp"/>
-
-
-
-                                </LinearLayout>
-                            </androidx.cardview.widget.CardView>
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="5dp"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="vertical">
-
-                                    <ImageView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="103dp"
-                                        android:src="@drawable/shoes"></ImageView>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Bloody"
-                                        android:layout_marginLeft="15dp"
-                                        android:textSize="10sp"
-                                        />
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="2dp"
-                                        android:textColor="@color/black"
-                                        android:textAlignment="center"
-                                        android:text="Shoes"
-                                        android:textSize="15dp"
-                                        android:textStyle="bold"/>
-
-
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="$19"
-                                        android:textSize="15sp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/main"
-                                        android:layout_marginLeft="15dp"/>
-
-
-
-                                </LinearLayout>
-                            </androidx.cardview.widget.CardView>
-
-                        </LinearLayout>
-
-                       </LinearLayout>
-
-                    </LinearLayout>
 
                 </LinearLayout>
 
-
-            </RelativeLayout>
-
-
-        </LinearLayout>
+            </LinearLayout>
 
 
-    </ScrollView>
+        </ScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <RelativeLayout
         android:id="@+id/footer"
@@ -712,13 +189,13 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:background="@android:color/transparent"
-        android:gravity="center" >
+        android:gravity="center">
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_height="wrap_content">
+            android:layout_marginRight="10dp">
 
             <LinearLayout
                 android:id="@+id/home_screen_btn"
@@ -737,8 +214,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
                     android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="Home"
@@ -747,10 +224,10 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/messages_screen_btn"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:id="@+id/messages_screen_btn"
                 android:orientation="vertical">
 
 
@@ -762,8 +239,8 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_gravity="center"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
@@ -773,11 +250,11 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/cart_screen_btn"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:orientation="vertical"
-                android:id="@+id/cart_screen_btn">
+                android:orientation="vertical">
 
 
                 <ImageView
@@ -799,11 +276,11 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/notifications_btn"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:orientation="vertical"
-                android:id="@+id/notifications_btn">
+                android:orientation="vertical">
 
 
                 <ImageView
@@ -815,8 +292,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
                     android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="Notifications"
@@ -825,11 +302,11 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/profile_btn"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:orientation="vertical"
-                android:id="@+id/profile_btn">
+                android:orientation="vertical">
 
 
                 <ImageView
@@ -853,7 +330,6 @@
 
         </LinearLayout>
     </RelativeLayout>
-
 
 
 </RelativeLayout>

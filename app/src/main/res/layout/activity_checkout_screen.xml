@@ -4,104 +4,165 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReviewsDetailPage">
+    android:animateLayoutChanges="true"
+    tools:context=".CheckoutScreen">
 
     <LinearLayout
+        android:id="@+id/Reviewslayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/Reviewslayout"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="30dp"
             android:text="Shipping Details"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_margin="30dp"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
 
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:layout_height="wrap_content">
 
-                <GridLayout
+                <androidx.cardview.widget.CardView
+
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <androidx.cardview.widget.CardView
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="8dp"
+                    app:contentPadding="16dp">
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp" >
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
+                        android:layout_height="wrap_content">
 
                         <LinearLayout
+                            android:id="@+id/layoutAddressDetails"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Qasim Mir"
-                                android:textColor="@color/black"
-                                android:textStyle="bold"
-                                android:layout_marginLeft="25dp"
-                                android:textSize="18sp"/>
-
-                            <TextView
-                                android:id="@+id/btn_add_newcard"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Change"
-                                android:textColor="@color/main"
-                                android:textStyle="bold"
-                                android:layout_marginLeft="130dp"
-                                android:textSize="18sp"/>
-                        </LinearLayout>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:text="Miana Pura"
-                                android:layout_marginLeft="25dp"
-                                android:textStyle="bold"
-                                android:textSize="18sp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:text="Siakot, Punjab, Pakistan"
-                                android:layout_marginLeft="25dp"
-                                android:textStyle="bold"
-                                android:textSize="18sp"/>
-
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_row="1"
-                        android:layout_column="0"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp" >
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
 
 
                             <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tvUsername"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    tools:text="Qasim Mir"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/btn_add_newcard"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="130dp"
+                                    android:text="Change"
+                                    android:textColor="@color/main"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvAddress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                tools:text="Miana Pura"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvCityCountry"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                tools:text="Siakot, Punjab, Pakistan"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutNoAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/textView9"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="No address added"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/btnAddDetails"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/btnAddDetails"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Add"
+                                android:textColor="@color/main"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="16dp"
+                    app:contentPadding="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/layoutCardDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
@@ -110,67 +171,122 @@
                                     android:layout_height="wrap_content"
                                     android:text="Payment"
                                     android:textColor="@color/black"
-                                    android:textStyle="bold"
-                                    android:layout_marginLeft="25dp"
-                                    android:textSize="18sp"/>
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/btn_add_newcard1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:text="Change"
+                                    android:textColor="@color/main"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="16dp"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/mastercardlogo" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Change"
-                                    android:id="@+id/btn_add_newcard1"
-                                    android:textColor="@color/main"
-                                    android:textStyle="bold"
-                                    android:layout_marginLeft="130dp"
-                                    android:textSize="18sp"/>
-                            </LinearLayout>
-                        <LinearLayout
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:text="**** **** **** 3947"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutNoCard"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                        <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_marginTop="20dp"
-                                android:layout_marginLeft="35dp"
-                                android:src="@drawable/mastercardlogo"/>
                             <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="No card added"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/btnAddCard"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/btnAddCard"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="30dp"
-                                android:text="**** **** **** 3947"
-                                android:layout_marginLeft="25dp"
+                                android:text="Add"
+                                android:textColor="@color/main"
+                                android:textSize="18sp"
                                 android:textStyle="bold"
-                                android:textSize="18sp"/>
-                        </LinearLayout>
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-                </GridLayout>
-            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:text="Total Cost                            $50 "
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_margin="30dp"
-            android:textSize="20sp"/>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </GridLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="30dp"
+                android:text="Total Cost"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTotalCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="bottom"
+                android:layout_margin="30dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="$50" />
+
+        </RelativeLayout>
+
         <Button
             android:id="@+id/btn_pay_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
-            android:textColor="@color/white"
-            android:background="@drawable/filled_btn_general"
             android:layout_marginRight="20dp"
-            android:text="Pay Amount"></Button>
+            android:background="@drawable/filled_btn_general"
+            android:text="Pay Amount"
+            android:textColor="@color/white"></Button>
 
     </LinearLayout>
-
 
 
 </RelativeLayout>

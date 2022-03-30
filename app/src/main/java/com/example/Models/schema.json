@@ -1,0 +1,53 @@
+{
+  "categories": {
+    "category1": {
+      "categoryId": "category1",
+      "categoryName": "Dry fruits",
+      "categoryImageUrl": "",
+      "products": {
+        "productId1": {
+          "id": "productId1",
+          "imageUrl": "",
+          "name": "",
+          "description": "",
+          "manufacturer": "",
+          "price": "",
+          "discountedPrice": "",
+          "favourites": {
+            "userId1": true,
+            "userId2": true
+          },
+          "rating": {
+            "userId1": {
+              "rating:": "4.5",
+              "feedback": "Satisfied"
+            },
+            "userId2": {}
+          }
+        }
+      }
+    }
+  },
+  "Products": [
+    {
+      "id": "",
+      "imageUrl": "",
+      "name": "",
+      "manufacturer": "",
+      "price": "",
+      "discountedPrice": "",
+      "favourites": {
+        "userId1": true,
+        "userId2": true
+      },
+      "rating": {
+        "userId1": {
+          "rating:": "4.5",
+          "feedback": "Satisfied"
+        },
+        "userId2": {}
+      }
+    }
+  ]
+}
+

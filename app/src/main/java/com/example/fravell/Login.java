@@ -36,7 +36,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         mAuth = FirebaseAuth.getInstance();
 
 
-
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
 // User is signed in
@@ -56,7 +55,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         prBar = findViewById(R.id.Pr_Bar);
 
-        forgotpass=findViewById(R.id.take_to_forgot);
+        forgotpass = findViewById(R.id.take_to_forgot);
         forgotpass.setOnClickListener(this);
 
     }
@@ -130,13 +129,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
             }
         });
-
-
-
-
-
-
-
 
 
     }

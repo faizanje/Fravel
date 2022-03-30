@@ -7,327 +7,89 @@
     tools:context=".CartScreen">
 
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@id/layoutOrder" />
+
+    <LinearLayout
+        android:paddingHorizontal="8dp"
+        android:id="@+id/layoutOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/footer"
         android:orientation="vertical">
 
-        <GridLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:rowCount="2">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_margin="@dimen/entry_fields_diff">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="@dimen/entry_fields_diff"
-                        android:src="@drawable/dates" />
-
-                    <LinearLayout
-                        android:layout_width="155dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:id="@+id/textView11"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="20dp"
-                            android:text="Dates"
-                            android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/textView12"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="Size: 1" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_marginTop="20dp">
-
-
-                            <!--  <androidx.cardview.widget.CardView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:cardCornerRadius="25dp"
-                android:contextClickable="true"
-                android:background="@drawable/cart_btns"
-                android:layout_margin="@dimen/entry_fields_diff">
-
-
-            </androidx.cardview.widget.CardView>-->
-                            <Button
-                                android:id="@+id/button3"
-                                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_marginLeft="5dp"
-                                android:layout_marginTop="5dp"
-                                android:text="-"
-                                android:textAlignment="center"
-                                android:textSize="20sp"
-                                app:cornerRadius="25dp" />
-
-                            <TextView
-                                android:id="@+id/textView13"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:layout_weight="1"
-                                android:text="1"
-                                android:textAlignment="center"
-                                android:textSize="25sp" />
-
-                            <Button
-                                android:id="@+id/button1"
-                                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_marginTop="2dp"
-                                android:text="+"
-
-                                app:cornerRadius="25dp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:layout_marginLeft="65dp"
-                        android:layout_marginBottom="12dp"
-                        android:text="25$"
-                        android:textColor="@color/black"
-                        android:textSize="30sp"
-                        android:textStyle="bold"></TextView>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardview2"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:layout_margin="@dimen/entry_fields_diff">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imageView1"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="@dimen/entry_fields_diff"
-                        android:src="@drawable/dry" />
-
-                    <LinearLayout
-                        android:layout_width="155dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:id="@+id/textView111"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="20dp"
-                            android:text="Dry Fruit"
-                            android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/textView112"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="Size: 1" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:layout_marginTop="20dp">
-
-
-                            <!--  <androidx.cardview.widget.CardView
-                              android:layout_width="50dp"
-                              android:layout_height="50dp"
-                              app:cardCornerRadius="25dp"
-                              android:contextClickable="true"
-                              android:background="@drawable/cart_btns"
-                              android:layout_margin="@dimen/entry_fields_diff">
-
-
-                          </androidx.cardview.widget.CardView>-->
-                            <Button
-                                android:id="@+id/button143"
-                                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_marginLeft="5dp"
-                                android:layout_marginTop="5dp"
-                                android:text="-"
-                                android:textAlignment="center"
-                                android:textSize="20sp"
-                                app:cornerRadius="25dp" />
-
-                            <TextView
-                                android:id="@+id/textView113"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:layout_weight="1"
-                                android:text="2"
-                                android:textAlignment="center"
-                                android:textSize="25sp" />
-
-                            <Button
-                                android:id="@+id/button13"
-                                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_marginTop="2dp"
-                                android:text="+"
-
-                                app:cornerRadius="25dp" />
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:layout_marginLeft="65dp"
-                        android:layout_marginBottom="12dp"
-                        android:text="20$"
-                        android:textColor="@color/black"
-                        android:textSize="30sp"
-                        android:textStyle="bold"></TextView>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-
-        </GridLayout>
-
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
-                android:layout_width="290dp"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/entry_fields_diff"
-                android:background="@android:color/transparent"
-                android:hint="Enter Promo Code"
-                android:textSize="25sp"></EditText>
-
-            <Button
-                android:id="@+id/button10"
-                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/arrow_icon"
-                android:textAlignment="center"
+                android:text="Order:"
                 android:textSize="20sp"
-                app:cornerRadius="25dp" />
-        </LinearLayout>
+                android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Order:"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="15dp"></TextView>
+            <TextView
+                android:id="@+id/tvOrderAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="45$" />
+        </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="45$"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            android:layout_marginLeft="275dp"></TextView>
-    </LinearLayout>
-
-        <LinearLayout
+        <RelativeLayout
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Delivery:"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginLeft="15dp"></TextView>
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvDeliveryAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="7$"
-                android:textStyle="bold"
+                android:layout_alignParentEnd="true"
                 android:textColor="@color/black"
-                android:textSize="25sp"
-                android:layout_marginLeft="270dp"></TextView>
-        </LinearLayout>
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="7$" />
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total Amount:"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:layout_marginLeft="15dp"></TextView>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
+                android:layout_alignParentEnd="true"
+                android:id="@+id/tvTotalAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="52$"
                 android:layout_gravity="right"
-                android:textStyle="bold"
+                android:layout_marginLeft="145dp"
                 android:textColor="@color/black"
-                android:textSize="25sp"
-                android:layout_marginLeft="145dp"></TextView>
-        </LinearLayout>
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="52$" />
+        </RelativeLayout>
 
         <Button
             android:id="@+id/btn_checkout_cart"
@@ -335,24 +97,25 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:textColor="@color/white"
-            android:background="@drawable/filled_btn_general"
             android:layout_marginRight="20dp"
-            android:text="CHECK OUT"></Button>
+            android:background="@drawable/filled_btn_general"
+            android:text="CHECK OUT"
+            android:textColor="@color/white"></Button>
     </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:background="@android:color/transparent"
-        android:gravity="center" >
+        android:gravity="center">
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_height="wrap_content">
+            android:layout_marginRight="10dp">
 
             <LinearLayout
                 android:id="@+id/home_screen_btn"
@@ -371,8 +134,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
                     android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="Home"
@@ -381,10 +144,10 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/messages_screen_btn"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:id="@+id/messages_screen_btn"
                 android:orientation="vertical">
 
 
@@ -396,8 +159,8 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_gravity="center"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
@@ -407,11 +170,11 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/cart_screen_btn"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:orientation="vertical"
-                android:id="@+id/cart_screen_btn">
+                android:orientation="vertical">
 
 
                 <ImageView
@@ -433,11 +196,11 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/notifications_btn"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:orientation="vertical"
-                android:id="@+id/notifications_btn">
+                android:orientation="vertical">
 
 
                 <ImageView
@@ -449,8 +212,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
                     android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="Notifications"
@@ -459,11 +222,11 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/profile_btn"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:orientation="vertical"
-                android:id="@+id/profile_btn">
+                android:orientation="vertical">
 
 
                 <ImageView
@@ -487,7 +250,6 @@
 
         </LinearLayout>
     </RelativeLayout>
-
 
 
 </RelativeLayout>

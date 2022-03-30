@@ -2,13 +2,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fravell">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@drawable/fravelllogopng"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Fravell">
+        android:theme="@style/Theme.Fravell"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".AllProductsByCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AllCategoriesActivity"
+            android:exported="false" />
         <activity
             android:name=".OrderSuccessScreen"
             android:exported="false" />
@@ -31,8 +41,7 @@
             android:label="Checkout" />
         <activity
             android:name=".HomeScreen"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".WriteReviewScreen"
             android:exported="false" />
@@ -67,12 +76,14 @@
             android:label="Cart" />
         <activity
             android:name=".EnrouteFravellers"
-            android:exported="true" >
-<!--        <intent-filter>-->
-<!--            <action android:name="android.intent.action.MAIN" />-->
+            android:exported="true">
 
-<!--            <category android:name="android.intent.category.LAUNCHER" />-->
-<!--        </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".CustomOrderDetails"
@@ -83,16 +94,31 @@
             android:label="New PassWord" />
         <activity android:name=".ForgotPinVeri" />
         <activity android:name=".ForgotPass" />
-        <activity android:name=".Login"
+        <activity
+            android:name=".Login"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".NumVeri1" />
         <activity android:name=".PhoneNumVeri" />
         <activity android:name=".EmailVeri" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
