@@ -18,4 +18,24 @@ public class FirebaseUtils {
                 .child(FirebaseAuth.getInstance().getUid())
                 .child("cart");
     }
+
+    public static DatabaseReference getCardsReference() {
+        return FirebaseDatabase.getInstance().getReference()
+                .child("users")
+                .child(FirebaseAuth.getInstance().getUid())
+                .child("card");
+    }
+
+    public static DatabaseReference getCompletedOrdersReference(){
+        return FirebaseDatabase.getInstance().getReference()
+                .child("users")
+                .child(FirebaseAuth.getInstance().getUid())
+                .child("completed-orders");
+    }
+
+
+    public static DatabaseReference getAvailableFravellersReference() {
+        return FirebaseDatabase.getInstance().getReference()
+                .child("fravellers");
+    }
 }

@@ -1,0 +1,26 @@
+{
+  "fraveller1": {
+    "id": "fraveller1",
+    "name": "Haris Awan",
+    "fromCity": "Skardu",
+    "toCity": "Sialkot",
+    "fromDateInMillis": 1648779391000,
+    "toDateInMillis": 1649124991000
+  },
+  "fraveller2": {
+    "id": "fraveller2",
+    "name": "Faizan Malik",
+    "fromCity": "Abbottabad",
+    "toCity": "Mansehra",
+    "fromDateInMillis": 1649556991000,
+    "toDateInMillis": 1649729791000
+  },
+  "fraveller3": {
+    "id": "fraveller3",
+    "name": "Hazrat Ullah",
+    "fromCity": "Mardan",
+    "toCity": "Kohat",
+    "fromDateInMillis": 1650248191000,
+    "toDateInMillis": 1650939391000
+  }
+}

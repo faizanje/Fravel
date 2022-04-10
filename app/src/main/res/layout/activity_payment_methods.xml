@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,11 +12,103 @@
         android:id="@+id/Reviewslayout"
         android:orientation="vertical">
 
+
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+
+
+<!--                <com.stripe.android.view.CardInputWidget-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+
+<!--                <com.stripe.android.view.CardNumberEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+
+<!--                <com.stripe.android.view.CvcEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+
+
+<!--                <com.stripe.android.view.ExpiryDateEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+
+
+<!--            </LinearLayout>-->
+
+<!--        </com.stripe.android.view.AddPaymentMethodCardView>-->
+
+<!--        <com.cooltechworks.creditcarddesign.CreditCardView-->
+<!--            android:id="@+id/creditCardView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            />-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            style="@style/MyTextInputLayout">-->
+
+<!--            <com.stripe.android.view.CardNumberEditText-->
+<!--                android:id="@+id/etCreditCard"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            style="@style/MyTextInputLayout">-->
+
+<!--            <com.stripe.android.view.CardBrandView-->
+<!--                android:id="@+id/card_brand_view"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <com.stripe.android.view.CardFormView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"/>-->
+
+<!--        <com.stripe.android.view.CardBrandSpinner-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+<!--        <com.stripe.android.view.CardInputWidget-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+
+<!--        <com.stripe.android.view.CardInputWidget-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+<!--        <com.stripe.android.view.CardMultilineWidget-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+<!--        <com.stripe.android.view.AddPaymentMethodCardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your Payment Cards"
+            android:text="Your Payment Card"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_margin="20dp"
@@ -27,43 +119,55 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" >
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp" >
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+
+            <com.stripe.android.view.CardMultilineWidget
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="16dp"
+                android:id="@+id/cardMultilineWidget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+<!--            <com.stripe.android.view.CardFormView-->
+<!--                android:id="@+id/creditCardFormView"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"/>-->
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginRight="10dp" >-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:orientation="vertical">-->
 
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="200dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginLeft="45dp"
-                            android:src="@drawable/mastercard"
-                            />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="Using this as Payment Method"
-                            android:layout_gravity="center"
-                            android:textStyle="bold"
-                            android:textSize="18sp"/>
+<!--                        <ImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="200dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:layout_marginLeft="45dp"-->
+<!--                            android:src="@drawable/mastercard"-->
+<!--                            />-->
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:text="Using this as Payment Method"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:textSize="18sp"/>-->
 
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+<!--                    </LinearLayout>-->
+<!--                </androidx.cardview.widget.CardView>-->
 
             <Button
                 android:id="@+id/btn_newcarddetails"
-                android:layout_width="120dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="300dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="20dp"
                 android:text="Add Card"
                 android:background="@color/main"
                 android:layout_gravity="right"
@@ -77,4 +181,4 @@
 
 
 
-</RelativeLayout>
+</ScrollView>

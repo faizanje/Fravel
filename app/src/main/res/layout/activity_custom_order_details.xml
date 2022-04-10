@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".CustomOrderDetails">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -27,12 +26,25 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilFromCity"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="@dimen/entry_fields_diff"
-            android:layout_marginRight="@dimen/entry_fields_diff"
-            android:hint="Eg. Skardu"></EditText>
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:baselineAligned="false"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/autoCompleteFromCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:completionThreshold="3"
+                android:ems="10"
+                android:hint="Select pickup city" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <TextView
@@ -45,76 +57,88 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilToCity"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="@dimen/entry_fields_diff"
-            android:layout_marginRight="@dimen/entry_fields_diff"
-            android:hint="Eg. Sialkot"></EditText>
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:baselineAligned="false"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/autoCompleteToCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:completionThreshold="3"
+                android:ems="10"
+                android:hint="Select destination city" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/entry_fields_diff"
-            android:text="Earliest Date?"
+            android:text="Date Range"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/editTextDate"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/MyTextInputLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/entry_fields_diff"
-            android:layout_marginRight="@dimen/entry_fields_diff"
-            android:ems="10"
-            android:hint="Eg. 05/10/2021"
-            android:inputType="date" />
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDateRange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/entry_fields_diff"
+                android:layout_marginRight="@dimen/entry_fields_diff"
+                android:clickable="true"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="Select date range"
+                android:inputType="date"
+                android:longClickable="false" />
 
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/entry_fields_diff"
-            android:text="Latest Date?"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-
-        <EditText
-            android:id="@+id/editTextDate1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/entry_fields_diff"
-            android:layout_marginRight="@dimen/entry_fields_diff"
-            android:ems="10"
-            android:hint="Eg. 15/10/2021"
-            android:inputType="date" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/entry_fields_diff"
+            android:layout_marginTop="10dp"
             android:text="Description"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/editTextTextMultiLine"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/MyTextInputLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/entry_fields_diff"
-            android:layout_marginRight="@dimen/entry_fields_diff"
-            android:ems="10"
-            android:gravity="start|top"
-            android:hint="Please Describe the item"
-            android:inputType="textMultiLine"
-            android:lines="4" />
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/entry_fields_diff"
+                android:layout_marginRight="@dimen/entry_fields_diff"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Please Describe the item"
+                android:inputType="textMultiLine"
+                android:lines="4" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <TextView
@@ -127,18 +151,26 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/editTextTextMultiLine1"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/MyTextInputLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/entry_fields_diff"
-            android:layout_marginTop="@dimen/entry_fields_diff"
-            android:layout_marginRight="@dimen/entry_fields_diff"
-            android:ems="10"
-            android:gravity="start|top"
-            android:hint="Any Additional Notes?"
-            android:inputType="textMultiLine"
-            android:lines="3" />
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAdditionalNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/entry_fields_diff"
+                android:layout_marginTop="@dimen/entry_fields_diff"
+                android:layout_marginRight="@dimen/entry_fields_diff"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Any Additional Notes?"
+                android:inputType="textMultiLine"
+                android:lines="3" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <Button
@@ -148,11 +180,11 @@
             android:layout_margin="30dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
-            android:textColor="@color/white"
             android:background="@color/main"
-            android:text="Submit" />
+            android:text="Submit"
+            android:textColor="@color/white" />
 
 
     </LinearLayout>
 
-</RelativeLayout>
+</ScrollView>

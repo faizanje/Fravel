@@ -31,8 +31,8 @@
             android:textStyle="bold" />
 
 
-        <EditText
-            android:id="@+id/editTextNumber"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/com.google.android.material.textfield.TextInputEditTextNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -41,8 +41,8 @@
             android:inputType="number" />
 
 
-        <EditText
-            android:id="@+id/editTextNumber1"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/com.google.android.material.textfield.TextInputEditTextNumber1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"

@@ -52,8 +52,8 @@
             android:textStyle="bold" />
 
 
-        <EditText
-            android:id="@+id/editTextPhone"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/com.google.android.material.textfield.TextInputEditTextPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/entry_fields_diff"

@@ -59,8 +59,8 @@
             android:textColor="@color/black"
             android:text="Enter 4 Digit Pin Sent To Your Email" />
 
-        <EditText
-            android:id="@+id/editTextNumber"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/com.google.android.material.textfield.TextInputEditTextNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"

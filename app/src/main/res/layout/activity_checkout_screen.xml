@@ -64,10 +64,10 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="25dp"
-                                    tools:text="Qasim Mir"
                                     android:textColor="@color/black"
                                     android:textSize="18sp"
-                                    android:textStyle="bold" />
+                                    android:textStyle="bold"
+                                    tools:text="Qasim Mir" />
 
                                 <TextView
                                     android:id="@+id/btn_add_newcard"
@@ -86,9 +86,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="25dp"
                                 android:layout_marginTop="10dp"
-                                tools:text="Miana Pura"
                                 android:textSize="18sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                tools:text="Miana Pura" />
 
                             <TextView
                                 android:id="@+id/tvCityCountry"
@@ -96,9 +96,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="25dp"
                                 android:layout_marginTop="10dp"
-                                tools:text="Siakot, Punjab, Pakistan"
                                 android:textSize="18sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                tools:text="Siakot, Punjab, Pakistan" />
 
                         </LinearLayout>
 
@@ -155,11 +155,12 @@
                         android:layout_height="wrap_content">
 
                         <LinearLayout
+                            android:visibility="gone"
                             android:id="@+id/layoutCardDetails"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:visibility="gone">
+                            >
 
 
                             <RelativeLayout
@@ -193,12 +194,12 @@
                                 android:layout_marginTop="16dp"
                                 android:gravity="center_vertical">
 
-                                <ImageView
-                                    android:layout_width="50dp"
-                                    android:layout_height="50dp"
-                                    android:src="@drawable/mastercardlogo" />
-
+                                <com.stripe.android.view.CardBrandView
+                                    android:id="@+id/cardBrandView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
                                 <TextView
+                                    android:id="@+id/tvCardNumber"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignParentEnd="true"

@@ -24,6 +24,7 @@ android {
         }
     }
     compileOptions {
+        coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -33,6 +34,8 @@ android {
 }
 
 dependencies {
+
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5' /* Local date time*/
 
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
@@ -56,6 +59,17 @@ dependencies {
     /* Image loading */
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+
+    /* Payment */
+    implementation 'com.stripe:stripe-android:19.3.0'
+
+    implementation 'com.github.fevziomurtekin:PayView:1.0.3'
+    implementation 'com.github.sharish:CreditCardView:v1.0.4'
+
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
+
+
+
 
 
 }

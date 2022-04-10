@@ -46,20 +46,20 @@
             android:textStyle="bold" />
 
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Email"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="@dimen/entry_fields_diff"
-            android:hint="Email"></EditText>
+            android:hint="Email"></com.google.android.material.textfield.TextInputEditText>
 
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Password"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="@dimen/entry_fields_diff"
-            android:hint="Password"></EditText>
+            android:hint="Password"></com.google.android.material.textfield.TextInputEditText>
 
 
         <TextView

@@ -55,7 +55,7 @@
                 android:layout_margin="20dp"
                 android:layout_height="200dp"
                 android:elevation="40dp">
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/lEmail"
                     android:layout_width="342dp"
                     android:layout_height="167dp"

@@ -29,8 +29,8 @@
             android:textColor="@color/black"
             android:text="Please Enter Your Password if you want to edit your Card Details" />
 
-        <EditText
-            android:id="@+id/editTextNumber"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/com.google.android.material.textfield.TextInputEditTextNumber"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginTop="40dp"

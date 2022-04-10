@@ -16,37 +16,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_marginTop="30dp"
             android:layout_height="70dp"
             android:layout_marginLeft="@dimen/entry_fields_diff"
             android:layout_marginRight="@dimen/entry_fields_diff"
-            android:hint="Name on Card"></EditText>
+            android:hint="Name on Card"></com.google.android.material.textfield.TextInputEditText>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_marginTop="15dp"
             android:layout_height="70dp"
             android:layout_marginLeft="@dimen/entry_fields_diff"
             android:layout_marginRight="@dimen/entry_fields_diff"
-            android:hint="Card Number"></EditText>
+            android:hint="Card Number"></com.google.android.material.textfield.TextInputEditText>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_marginTop="15dp"
             android:layout_height="70dp"
             android:layout_marginLeft="@dimen/entry_fields_diff"
             android:layout_marginRight="@dimen/entry_fields_diff"
-            android:hint="Expire Date"></EditText>
+            android:hint="Expire Date"></com.google.android.material.textfield.TextInputEditText>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_marginTop="15dp"
             android:layout_height="70dp"
             android:layout_marginLeft="@dimen/entry_fields_diff"
             android:layout_marginRight="@dimen/entry_fields_diff"
-            android:hint="CVV"></EditText>
+            android:hint="CVV"></com.google.android.material.textfield.TextInputEditText>
 
 
         <Button

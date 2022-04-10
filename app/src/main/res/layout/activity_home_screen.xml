@@ -34,7 +34,7 @@
                     android:layout_margin="15dp"
                     android:orientation="vertical">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/search"
                         android:layout_width="330dp"
                         android:layout_height="wrap_content"

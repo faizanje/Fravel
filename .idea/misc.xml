@@ -11,15 +11,22 @@
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_all_categories.xml" value="0.25416666666666665" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_all_products_by_category.xml" value="0.3044822256568779" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_cart_screen.xml" value="0.2" />
-        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_checkout_screen.xml" value="0.2" />
-        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_enroute_fravellers.xml" value="0.264" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_checkout_screen.xml" value="0.264" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_custom_order_details.xml" value="0.264" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_enroute_fravellers.xml" value="0.2" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_home_screen.xml" value="0.176" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_login.xml" value="0.11302083333333333" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_main.xml" value="0.536" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_messages_main_screen.xml" value="0.11302083333333333" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_order_success_screen.xml" value="0.2" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_payment_methods.xml" value="0.2" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_product_detail_page.xml" value="0.2" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_write_review_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/dialog_progress_simple.xml" value="0.25416666666666665" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/item_rv_available_fraveller.xml" value="0.2" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/item_rv_available_fraveller_old.xml" value="0.25416666666666665" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/item_rv_cart.xml" value="0.264" />
-        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/item_rv_category.xml" value="0.4" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/item_rv_category.xml" value="0.264" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/item_rv_category_2.xml" value="0.25416666666666665" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/item_rv_product.xml" value="0.4" />
         <entry key="..\:/Fravell/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2203125" />

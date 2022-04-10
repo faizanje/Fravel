@@ -55,11 +55,11 @@
             android:text="Please Enter Your Email, You will \nreceive 4 digit PIN code to craete new \npassword." />
 
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="@dimen/entry_fields_diff"
-            android:hint="Email"></EditText>
+            android:hint="Email"></com.google.android.material.textfield.TextInputEditText>
 
 
 
