@@ -7,7 +7,7 @@
     tools:context=".WriteReviewScreen">
 
 
-    <androidx.cardview.widget.CardView
+    <ScrollView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,8 +23,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="What is your Rate?"
                 android:layout_marginTop="15dp"
+                android:text="What is your Rate?"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -33,18 +33,17 @@
 
             <RatingBar
                 android:id="@+id/ratingBar2"
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                />
+                android:layout_gravity="center"
+                android:layout_marginTop="28dp" />
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Please share your opinion about the product here"
                 android:layout_marginTop="15dp"
+                android:text="Please share your opinion about the product here"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -52,11 +51,12 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_margin="20dp"
                 android:layout_height="200dp"
+                android:layout_margin="20dp"
                 android:elevation="40dp">
+
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/lEmail"
+                    android:id="@+id/etReview"
                     android:layout_width="342dp"
                     android:layout_height="167dp"
                     android:layout_marginTop="12dp"
@@ -64,29 +64,53 @@
                     android:inputType="text"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
-                    />
+                    android:textSize="16sp" />
             </androidx.cardview.widget.CardView>
 
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/addphotoicon"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="15dp"/>
+            <androidx.cardview.widget.CardView
+                app:cardBackgroundColor="@color/grey"
+                android:layout_marginHorizontal="16dp"
+                app:cardCornerRadius="10dp"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="250dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ivImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:id="@+id/btnPickImage"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="15dp"
+                        android:src="@drawable/big" />
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
             <Button
                 android:id="@+id/submitreviewbtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/white"
-                android:background="@drawable/filled_btn_general"
                 android:layout_marginRight="20dp"
-                android:text="SEND REVIEW"></Button>
+                android:background="@drawable/filled_btn_general"
+                android:text="SEND REVIEW"
+                android:textColor="@color/white" />
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </ScrollView>
 
 
 </LinearLayout>

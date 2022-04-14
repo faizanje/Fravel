@@ -127,6 +127,7 @@ Short Dress jkdfhjkgaskfhdaklhdfkh kajdfhajklsd askfhasdjkfh lakjshdfjklasdf kah
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvReadAll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="120dp"

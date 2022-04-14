@@ -11,11 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.Models.CartItem;
-import com.example.Utils.CartUtils;
-import com.example.Utils.Constants;
-import com.example.Utils.FirebaseUtils;
-import com.example.adapters.CartAdapter;
+import com.example.fravell.Models.CartItem;
+import com.example.fravell.Utils.CartUtils;
+import com.example.fravell.Utils.Constants;
+import com.example.fravell.Utils.FirebaseUtils;
+import com.example.fravell.Utils.NumberUtils;
+import com.example.fravell.adapters.CartAdapter;
 import com.example.fravell.databinding.ActivityCartScreenBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,7 +33,7 @@ public class CartScreen extends AppCompatActivity {
     ActivityCartScreenBinding binding;
     int deliveryPrice = Constants.DELIVERY_PRICE;
     int orderAmount = 0;
-    int totalAmount = 0;
+    double totalAmount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,7 +140,7 @@ public class CartScreen extends AppCompatActivity {
                         for (DataSnapshot child : snapshot.getChildren()) {
                             CartItem cartItem = child.getValue(CartItem.class);
                             cartItemArrayList.add(cartItem);
-                            orderAmount += (cartItem.getQuantity() * cartItem.getProduct().getPrice());
+                            orderAmount += (cartItem.getQuantity() * NumberUtils.getDiscountedPrice(cartItem.getProduct().getPrice()));
                         }
 
                         if (cartItemArrayList.isEmpty()) {

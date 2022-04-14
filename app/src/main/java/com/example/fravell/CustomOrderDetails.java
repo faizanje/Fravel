@@ -12,9 +12,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.util.Pair;
 
-import com.example.Models.CustomOrder;
-import com.example.Utils.Constants;
-import com.example.Utils.DateTimeUtils;
+import com.example.fravell.Models.CustomOrder;
+import com.example.fravell.Utils.Constants;
+import com.example.fravell.Utils.DateTimeUtils;
 import com.example.fravell.databinding.ActivityCustomOrderDetailsBinding;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;

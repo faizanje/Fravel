@@ -7,12 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.Models.Buyers;
-import com.example.Models.User;
+import com.example.fravell.Models.Buyer;
+import com.example.fravell.Models.User;
+import com.example.fravell.Utils.DBUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -21,7 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     TextView editName, editEmail, editPassword, editConfirmPassword, editLogin;
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity{
 
         prBar = findViewById(R.id.Spr_bar);
 
-        signup= findViewById(R.id.signup);
+        signup = findViewById(R.id.signup);
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,11 +56,11 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-        to_login=findViewById(R.id.take_to_login);
+        to_login = findViewById(R.id.take_to_login);
         to_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,Login.class);
+                Intent intent = new Intent(MainActivity.this, Login.class);
                 startActivity(intent);
             }
         });
@@ -104,39 +106,33 @@ public class MainActivity extends AppCompatActivity{
         String password = editPassword.getText().toString().trim();
         //String confirmPassword = editConfirmPassword.getText().toString().trim();
 
-        Buyers buyers = new Buyers(name, email, password);
 
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myReference = firebaseDatabase.getReference("buyers/");
-        myReference.push().setValue(buyers);
-
-
-        if(name.isEmpty()){
+        if (name.isEmpty()) {
             editEmail.setError("Full Name is Required!");
             editEmail.requestFocus();
             return;
         }
 
-        if(email.isEmpty()){
+        if (email.isEmpty()) {
             editEmail.setError("Email Address is Required!");
             editEmail.requestFocus();
             return;
         }
 
-        if(password.isEmpty()){
+        if (password.isEmpty()) {
             editPassword.setError("Password is Required!");
             editPassword.requestFocus();
             return;
         }
 
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             editEmail.setError("Please provide valid email!");
             editEmail.requestFocus();
             return;
         }
 
 
-        if(password.length() < 6){
+        if (password.length() < 6) {
             editPassword.setError("Password length must be greater than 6");
             editPassword.requestFocus();
             return;
@@ -144,17 +140,22 @@ public class MainActivity extends AppCompatActivity{
 
 
         prBar.setVisibility(View.VISIBLE);
-        mAuth.createUserWithEmailAndPassword(email,password)
+        mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
 
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
 
-                            User user = new User(email,password);
+                            Buyer buyer = new Buyer(name, email, password);
+                            FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+                            DatabaseReference myReference = firebaseDatabase.getReference("buyers/");
+                            myReference.push().child(FirebaseAuth.getInstance().getUid()).setValue(buyer);
 
+                            User user = new User(email, password);
+                            DBUtils.saveLoggedInUser(buyer);
                             startActivity(new Intent(MainActivity.this, HomeScreen.class));
-
+                            finish();
                             /*FirebaseDatabase.getInstance().getReference("Users")
                                     .child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -180,11 +181,10 @@ public class MainActivity extends AppCompatActivity{
                             });
 
                              */
-                        }
-                        else {
+                        } else {
                             //  Toast.makeText(buyer_signup.this, -5.+"Failed to registered. Try Again!", Toast.LENGTH_LONG).show();
                             prBar.setVisibility(View.GONE);
-
+                            Toast.makeText(MainActivity.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
 
                     }

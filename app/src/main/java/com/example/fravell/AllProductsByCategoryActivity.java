@@ -6,10 +6,10 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 
-import com.example.Models.Category;
-import com.example.Models.Product;
-import com.example.Utils.Constants;
-import com.example.adapters.ProductsHorizontalAdapter;
+import com.example.fravell.Models.Category;
+import com.example.fravell.Models.Product;
+import com.example.fravell.Utils.Constants;
+import com.example.fravell.adapters.ProductsHorizontalAdapter;
 import com.example.fravell.databinding.ActivityAllProductsByCategoryBinding;
 
 import java.util.ArrayList;

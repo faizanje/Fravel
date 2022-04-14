@@ -7,8 +7,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.Models.UserAddress;
-import com.example.Utils.FirebaseUtils;
+import com.example.fravell.Models.UserAddress;
+import com.example.fravell.Utils.FirebaseUtils;
 import com.example.fravell.databinding.ActivityAddShippingAddressBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

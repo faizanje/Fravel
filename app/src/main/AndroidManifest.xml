@@ -3,6 +3,7 @@
     package="com.example.fravell">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".App"
@@ -13,6 +14,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fravell"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".OrderDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyOrdersActivity"
+            android:exported="false"
+            android:label="@string/title_activity_my_orders"
+            android:theme="@style/Theme.Fravell.NoActionBar" />
+        <activity
+            android:name=".MyProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BottomNavigationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_bottom_navigation" />
         <activity
             android:name=".AllProductsByCategoryActivity"
             android:exported="false" />
@@ -115,7 +134,6 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-
 
         <meta-data
             android:name="preloaded_fonts"

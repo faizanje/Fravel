@@ -20,7 +20,7 @@ public class NewPassEnter extends AppCompatActivity {
         set_new_pass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(NewPassEnter.this,HomeScreen.class);
+                Intent intent=new Intent(NewPassEnter.this, HomeScreen.class);
                 startActivity(intent);
             }
         });

@@ -15,10 +15,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.example.Utils.CartUtils;
-import com.example.Models.Product;
-import com.example.Utils.Constants;
-import com.example.Utils.NumberUtils;
+import com.example.fravell.Utils.CartUtils;
+import com.example.fravell.Models.Product;
+import com.example.fravell.Utils.Constants;
+import com.example.fravell.Utils.NumberUtils;
 import com.example.fravell.databinding.ActivityProductDetailPageBinding;
 
 public class ProductDetailPage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -58,6 +58,15 @@ public class ProductDetailPage extends AppCompatActivity implements AdapterView.
             public void onClick(View view) {
                 Intent intent = new Intent(ProductDetailPage.this, CartScreen.class);
                 Toast.makeText(getApplicationContext(), "Added to cart", Toast.LENGTH_LONG).show();
+                startActivity(intent);
+            }
+        });
+
+        binding.tvReadAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductDetailPage.this, ReviewsDetailPage.class);
+                intent.putExtra(Constants.KEY_PRODUCT, product);
                 startActivity(intent);
             }
         });

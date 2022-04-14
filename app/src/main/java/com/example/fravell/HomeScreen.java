@@ -12,13 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.example.Models.Category;
-import com.example.Models.Product;
-import com.example.Utils.Constants;
-import com.example.adapters.CategoriesHorizontalAdapter;
-import com.example.adapters.ProductsHorizontalAdapter;
+import com.example.fravell.Models.Category;
+import com.example.fravell.Models.Product;
+import com.example.fravell.Utils.Constants;
+import com.example.fravell.adapters.CategoriesHorizontalAdapter;
+import com.example.fravell.adapters.ProductsHorizontalAdapter;
 import com.example.fravell.databinding.ActivityHomeScreenBinding;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,8 +29,8 @@ import java.util.Random;
 
 public class HomeScreen extends AppCompatActivity {
 
-    LinearLayout home, messages, cart, account;
     ActivityHomeScreenBinding binding;
+    LinearLayout home, messages, cart, account;
     ProductsHorizontalAdapter productsHorizontalAdapter;
     ProductsHorizontalAdapter newProductsHorizontalAdapter;
     CategoriesHorizontalAdapter categoriesHorizontalAdapter;
@@ -199,9 +198,9 @@ public class HomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(HomeScreen.this, Login.class);
-                Toast.makeText(getApplicationContext(), "Logout", Toast.LENGTH_LONG).show();
+//                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(HomeScreen.this, AccountActivity.class);
+//                Toast.makeText(getApplicationContext(), "Logout", Toast.LENGTH_LONG).show();
                 startActivity(intent);
 
             }

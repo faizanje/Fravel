@@ -8,9 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.Models.Category;
-import com.example.Utils.Constants;
-import com.example.adapters.CategoriesVerticalAdapter;
+import com.example.fravell.Models.Category;
+import com.example.fravell.Utils.Constants;
+import com.example.fravell.adapters.CategoriesVerticalAdapter;
 import com.example.fravell.databinding.ActivityAllCategoriesBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

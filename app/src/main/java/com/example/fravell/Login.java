@@ -13,11 +13,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.fravell.Models.Buyer;
+import com.example.fravell.Utils.DBUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
@@ -115,12 +119,22 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
+                    FirebaseDatabase.getInstance().getReference()
+                            .child("buyers")
+                            .child(user.getUid())
+                            .get()
+                            .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                    Buyer buyer = task.getResult().getValue(Buyer.class);
+                                    DBUtils.saveLoggedInUser(buyer);
+                                    startActivity(new Intent(Login.this, HomeScreen.class));
+                                    finish();
+                                }
+                            });
                     //redirect to the buyer home
                     Log.i("Qasim", "onComplete: I am in Login ");
-                    Toast.makeText(Login.this, "You are already logged in", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(Login.this, HomeScreen.class));
-                    finish();
+
 
                 } else {
                     Toast.makeText(Login.this, "Failed to login. Please check your credentials", Toast.LENGTH_LONG).show();

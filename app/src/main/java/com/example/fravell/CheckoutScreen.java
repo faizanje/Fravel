@@ -2,6 +2,7 @@ package com.example.fravell;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,19 +16,21 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
-import com.example.Models.CartItem;
-import com.example.Models.MyCreditCard;
-import com.example.Models.UserAddress;
-import com.example.Utils.Constants;
-import com.example.Utils.DialogUtil;
-import com.example.Utils.FirebaseUtils;
+import com.example.fravell.Models.CartItem;
+import com.example.fravell.Models.MyCreditCard;
+import com.example.fravell.Models.Order;
+import com.example.fravell.Models.OrderStatus;
+import com.example.fravell.Models.UserAddress;
+import com.example.fravell.Utils.Constants;
+import com.example.fravell.Utils.DialogUtil;
+import com.example.fravell.Utils.FirebaseUtils;
+import com.example.fravell.Utils.NumberUtils;
 import com.example.fravell.databinding.ActivityCheckoutScreenBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 import com.stripe.android.PaymentConfiguration;
 import com.stripe.android.model.CardBrand;
@@ -46,12 +49,12 @@ public class CheckoutScreen extends AppCompatActivity {
 
     Button pay;
     TextView btn1, btn2;
-    int totalAmount = 0;
+    double totalAmount = 0;
     ArrayList<CartItem> cartItemArrayList = new ArrayList<>();
     ActivityCheckoutScreenBinding binding;
     String paymentIntentClientSecret;
     MyCreditCard myCreditCard;
-
+    UserAddress userAddress;
     private PaymentLauncher paymentLauncher;
 
     @Override
@@ -62,9 +65,9 @@ public class CheckoutScreen extends AppCompatActivity {
 
 
         cartItemArrayList = (ArrayList<CartItem>) getIntent().getSerializableExtra(Constants.KEY_CART_LIST);
-        totalAmount = getIntent().getIntExtra(Constants.KEY_TOTAL_AMOUNT, 0);
+        totalAmount = getIntent().getDoubleExtra(Constants.KEY_TOTAL_AMOUNT, 0);
 
-        binding.tvTotalCost.setText("$" + totalAmount);
+        binding.tvTotalCost.setText("$" + NumberUtils.round(totalAmount,1));
 
 
         init();
@@ -150,26 +153,31 @@ public class CheckoutScreen extends AppCompatActivity {
                     + ((PaymentResult.Failed) paymentResult).getThrowable().getMessage();
         }
 
-        if(!success){
+        if (!success) {
             DialogUtil.closeProgressDialog();
             Toast.makeText(this, "Error: " + message, Toast.LENGTH_LONG).show();
-        }else{
-            saveCompletedOrders();
+        } else {
+            saveOrderInDatabase();
         }
 
 
     }
 
-    private void saveCompletedOrders() {
-        DatabaseReference reference = FirebaseUtils.getCompletedOrdersReference()
-                .push();
-        reference.setValue(cartItemArrayList)
-        .addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                startActivity(new Intent(CheckoutScreen.this, OrderSuccessScreen.class));
-            }
-        });
+    private void saveOrderInDatabase() {
+        int oneTimeID = (int) (SystemClock.uptimeMillis() % 99999999);
+        double totalAmount = NumberUtils.getTotalAmountAndQuantity(cartItemArrayList);
+        Order order = new Order(String.valueOf(oneTimeID),totalAmount,System.currentTimeMillis(),OrderStatus.PROCESSING.getStatus(),cartItemArrayList,userAddress);
+        DialogUtil.showSimpleProgressDialog(this);
+        FirebaseUtils.getOrdersReference()
+                .child(order.getOrderId())
+                .setValue(order)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        DialogUtil.closeProgressDialog();
+                        startActivity(new Intent(CheckoutScreen.this, OrderSuccessScreen.class));
+                    }
+                });
     }
 
     private void payAmount() {
@@ -236,7 +244,7 @@ public class CheckoutScreen extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()) {
-                            UserAddress userAddress = snapshot.getValue(UserAddress.class);
+                            userAddress = snapshot.getValue(UserAddress.class);
                             if (userAddress != null) {
                                 binding.layoutNoAddress.setVisibility(View.GONE);
                                 populateUserAddress(userAddress);
