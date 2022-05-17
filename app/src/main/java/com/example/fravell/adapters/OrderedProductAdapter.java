@@ -20,10 +20,12 @@ public class OrderedProductAdapter extends RecyclerView.Adapter<OrderedProductAd
     ArrayList<CartItem> cartItemArrayList;
     Context context;
     OnCartItemClickListener onCartItemClickListener;
+    boolean showReviewButton;
 
-    public OrderedProductAdapter(Context context, ArrayList<CartItem> cartItemArrayList) {
+    public OrderedProductAdapter(Context context, ArrayList<CartItem> cartItemArrayList, boolean showReviewButton) {
         this.context = context;
         this.cartItemArrayList = cartItemArrayList;
+        this.showReviewButton = showReviewButton;
     }
 
     public void setOnCartItemClickListener(OnCartItemClickListener onCartItemClickListener) {
@@ -52,7 +54,7 @@ public class OrderedProductAdapter extends RecyclerView.Adapter<OrderedProductAd
         double discountedPrice = NumberUtils.getDiscountedPrice(cartItem.getProduct().getPrice());
         holder.binding.tvPrice.setText("$" + NumberUtils.round(discountedPrice, 1));
 
-        if(cartItem.hasFeedbackLeft()){
+        if (cartItem.isFeedbackLeft()) {
 //            holder.binding.btnGiveFeedback.setVisibility(View.GONE);
             holder.binding.btnGiveFeedback.setEnabled(false);
             holder.binding.btnGiveFeedback.setText("Reviewed");
@@ -86,6 +88,9 @@ public class OrderedProductAdapter extends RecyclerView.Adapter<OrderedProductAd
         public MyViewHolder(@NotNull ItemRvOrderedProductBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+
+
+            binding.btnGiveFeedback.setVisibility(showReviewButton ? View.VISIBLE : View.GONE);
 
 
         }

@@ -23,40 +23,49 @@
 <!--            android:src="@drawable/account_circle" />-->
 
 
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Haris Ali"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tvUsername"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:text="Haris Ali"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
             <RatingBar
                 android:id="@+id/ratingBar"
-                android:layout_centerInParent="true"
-                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
                 style="@style/Widget.AppCompat.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="August 14, 2019"
+                android:textColor="@color/grey_700"
+                android:textSize="16sp"
+                 />
 
+
+
+        </RelativeLayout>
         <TextView
             android:id="@+id/tvReview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:text="The product reached on time and is very good. there is no complaint in the product and the seller was very responsive. Would love to shop again with you guys. "
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="16sp"
+             />
 
         <androidx.cardview.widget.CardView
             android:visibility="gone"

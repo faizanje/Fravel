@@ -7,24 +7,30 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.example.fravell.Utils.CartUtils;
 import com.example.fravell.Models.Product;
+import com.example.fravell.Utils.CartUtils;
 import com.example.fravell.Utils.Constants;
+import com.example.fravell.Utils.FirebaseUtils;
 import com.example.fravell.Utils.NumberUtils;
 import com.example.fravell.databinding.ActivityProductDetailPageBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 public class ProductDetailPage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     Spinner dropdown;
-    TextView rev;
     Button addtocart, cart;
     LinearLayout mainlayout;
     ActivityProductDetailPageBinding binding;
@@ -50,9 +56,51 @@ public class ProductDetailPage extends AppCompatActivity implements AdapterView.
         dropdown.setAdapter(adapter);
         dropdown.setOnItemSelectedListener(this);
 
-        rev = findViewById(R.id.reviewsbtn);
         /*mainlayout=findViewById(R.id.productdetailpagemainlinear);*/
 
+        getReviewsData();
+        getFavouriteData();
+        setListeners();
+    }
+
+    private void getFavouriteData() {
+        FirebaseUtils.getFavouritesReference()
+                .child(product.getId())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                        if (task.getResult() != null) {
+                            if (task.getResult().getValue() != null) {
+                                boolean isFavourite = task.getResult().getValue(Boolean.class);
+                                if (isFavourite) {
+                                    binding.btnFavourite.setChecked(isFavourite);
+
+                                }
+                            }
+
+
+                        }
+                    }
+                });
+    }
+
+    private void setListeners() {
+
+        binding.btnFavourite.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                FirebaseUtils.getFavouritesReference()
+                        .child(product.getId())
+                        .setValue(b);
+            }
+        });
+//        binding.btnFavourite.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
         addtocart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,33 +135,25 @@ public class ProductDetailPage extends AppCompatActivity implements AdapterView.
             }
         });
 
-        rev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    }
 
+    private void getReviewsData() {
+        FirebaseUtils.getReviewsReference()
+                .child(product.getId())
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        int length = 0;
+                        for (DataSnapshot child : snapshot.getChildren()) {
+                            length++;
+                        }
+                        binding.tvReviews.setText(String.format("Reviews (%s)", length));
+                    }
 
-/*
-                // create a frame layout
-                FrameLayout fragmentLayout = new FrameLayout(ProductDetailPage.this);
-// set the layout params to fill the activity
-                fragmentLayout.setLayoutParams(new  ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-// set an id to the layout
-                fragmentLayout.setId(R.id.fragmentLayout); // some positive integer
-// set the layout as Activity content
-                setContentView(fragmentLayout);
-// Finally , add the fragment
-                getSupportFragmentManager().beginTransaction().add(R.id.fragmentLayout,new ReviewsFragment()).commit();
-*/
-
-                /*ReviewsFragment revfrag= new ReviewsFragment();*/
-                /*FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.productdetailpagemainlinear,fragmentLayout.);
-                transaction.commit();*/
-
-                Intent intent = new Intent(ProductDetailPage.this, ReviewsDetailPage.class);
-                startActivity(intent);
-            }
-        });
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                    }
+                });
     }
 
     private void populateData() {

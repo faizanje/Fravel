@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/drawable/favorites.xml" value="0.1555" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/drawable/filled_btn_general.xml" value="0.155" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.1215" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1555" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.1555" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/drawable/minus.xml" value="0.1215" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/drawable/plus.xml" value="0.1215" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/drawable/selector_favourite.xml" value="0.1555" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/font/nunito.xml" value="0.1675925925925926" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_account.xml" value="0.24074074074074073" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_add_new_card.xml" value="0.24559777571825764" />
@@ -23,10 +27,11 @@
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_main.xml" value="0.536" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_messages_main_screen.xml" value="0.11302083333333333" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_my_orders.xml" value="0.264" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_my_wish_list.xml" value="0.25416666666666665" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_order_detail.xml" value="0.2" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_order_success_screen.xml" value="0.2" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_payment_methods.xml" value="0.2" />
-        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_product_detail_page.xml" value="0.2" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_product_detail_page.xml" value="0.8800000000000001" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_profile.xml" value="0.27789473684210525" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_reviews_detail_page.xml" value="0.25416666666666665" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/activity_write_review_screen.xml" value="0.264" />
@@ -46,7 +51,7 @@
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/item_rv_order.xml" value="0.264" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/item_rv_ordered_product.xml" value="0.264" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/item_rv_product.xml" value="0.4" />
-        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/item_rv_review.xml" value="0.2" />
+        <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/layout/item_rv_review.xml" value="0.4" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/AProjects/Android Studio Projects/Fravel/app/src/main/res/menu/main.xml" value="0.25416666666666665" />
         <entry key="..\:/Fravell/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2203125" />

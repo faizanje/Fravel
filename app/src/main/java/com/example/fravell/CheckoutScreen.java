@@ -67,7 +67,7 @@ public class CheckoutScreen extends AppCompatActivity {
         cartItemArrayList = (ArrayList<CartItem>) getIntent().getSerializableExtra(Constants.KEY_CART_LIST);
         totalAmount = getIntent().getDoubleExtra(Constants.KEY_TOTAL_AMOUNT, 0);
 
-        binding.tvTotalCost.setText("$" + NumberUtils.round(totalAmount,1));
+        binding.tvTotalCost.setText("$" + NumberUtils.round(totalAmount, 1));
 
 
         init();
@@ -94,6 +94,15 @@ public class CheckoutScreen extends AppCompatActivity {
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (userAddress == null) {
+                    Toast.makeText(CheckoutScreen.this, "User address is null", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (myCreditCard == null) {
+                    Toast.makeText(CheckoutScreen.this, "Payment method is null", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 payAmount();
 //                Intent intent = new Intent(CheckoutScreen.this, OrderSuccessScreen.class);
 //                startActivity(intent);
@@ -166,7 +175,7 @@ public class CheckoutScreen extends AppCompatActivity {
     private void saveOrderInDatabase() {
         int oneTimeID = (int) (SystemClock.uptimeMillis() % 99999999);
         double totalAmount = NumberUtils.getTotalAmountAndQuantity(cartItemArrayList);
-        Order order = new Order(String.valueOf(oneTimeID),totalAmount,System.currentTimeMillis(),OrderStatus.PROCESSING.getStatus(),cartItemArrayList,userAddress);
+        Order order = new Order(String.valueOf(oneTimeID), totalAmount, System.currentTimeMillis(), OrderStatus.PROCESSING.getStatus(), cartItemArrayList, userAddress);
         DialogUtil.showSimpleProgressDialog(this);
         FirebaseUtils.getOrdersReference()
                 .child(order.getOrderId())

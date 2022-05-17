@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.fravell.Models.Review;
+import com.example.fravell.Utils.Constants;
+import com.example.fravell.Utils.DateTimeUtils;
 import com.example.fravell.databinding.ItemRvReviewBinding;
 import com.google.firebase.database.annotations.NotNull;
 
@@ -47,6 +49,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.MyViewHold
         holder.binding.ratingBar.setRating(review.getRating());
         holder.binding.tvUsername.setText(review.getUserName());
         holder.binding.tvReview.setText(review.getReview());
+        holder.binding.tvDate.setText(DateTimeUtils.millisecondsToDate(review.getTimeInMillis(), Constants.DATE_FORMAT_2));
     }
 
 

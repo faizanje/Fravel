@@ -1,16 +1,36 @@
 package com.example.fravell.Models;
 
 import java.io.Serializable;
+import java.util.HashMap;
 
 public class Product implements Serializable {
     String id;
+    String categoryId;
     String title;
     float price;
     String manufacturer;
     String description;
     String category;
     String image;
+    HashMap<String, Boolean> favourites = new HashMap<>();
 
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    public Product setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
+        return this;
+    }
+
+    public HashMap<String, Boolean> getFavourites() {
+        return favourites;
+    }
+
+    public Product setFavourites(HashMap<String, Boolean> favourites) {
+        this.favourites = favourites;
+        return this;
+    }
 
     public String getId() {
         return id;

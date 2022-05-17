@@ -3,6 +3,7 @@ package com.example.fravell;
 import android.os.Bundle;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -13,7 +14,9 @@ import com.example.fravell.Utils.Constants;
 import com.example.fravell.Utils.FirebaseUtils;
 import com.example.fravell.adapters.ReviewAdapter;
 import com.example.fravell.databinding.ActivityReviewsDetailPageBinding;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -21,9 +24,10 @@ public class ReviewsDetailPage extends AppCompatActivity {
 
     Button writerev;
     ActivityReviewsDetailPageBinding binding;
-    ReviewAdapter adapter ;
+    ReviewAdapter adapter;
     ArrayList<Review> reviews = new ArrayList<>();
     Product product;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +37,7 @@ public class ReviewsDetailPage extends AppCompatActivity {
         product = (Product) getIntent().getSerializableExtra(Constants.KEY_PRODUCT);
 
         binding.swipeRefreshLayout.setRefreshing(true);
-        adapter = new ReviewAdapter(this,reviews);
+        adapter = new ReviewAdapter(this, reviews);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerView.setAdapter(adapter);
 
@@ -64,7 +68,26 @@ public class ReviewsDetailPage extends AppCompatActivity {
 
     private void getData() {
         FirebaseUtils.getReviewsReference()
-                .child(product)
+                .child(product.getId())
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        binding.swipeRefreshLayout.setRefreshing(false);
+                        reviews.clear();
+                        for (DataSnapshot child : snapshot.getChildren()) {
+                            Review review = child.getValue(Review.class);
+                            reviews.add(review);
+                        }
+                        binding.tvReviews.setText(String.format("Reviews (%s)", reviews.size()));
+
+                        adapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        binding.swipeRefreshLayout.setRefreshing(false);
+                    }
+                });
 
     }
 }

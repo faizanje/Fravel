@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                             Buyer buyer = new Buyer(name, email, password);
                             FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
                             DatabaseReference myReference = firebaseDatabase.getReference("buyers/");
-                            myReference.push().child(FirebaseAuth.getInstance().getUid()).setValue(buyer);
+                            myReference.child(FirebaseAuth.getInstance().getUid()).setValue(buyer);
 
                             User user = new User(email, password);
                             DBUtils.saveLoggedInUser(buyer);

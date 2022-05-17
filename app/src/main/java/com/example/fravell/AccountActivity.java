@@ -47,9 +47,10 @@ public class AccountActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i) {
                     case 0:
-                        startActivity(new Intent(AccountActivity.this,MyOrdersActivity.class));
+                        startActivity(new Intent(AccountActivity.this, MyOrdersActivity.class));
                         break;
                     case 1:
+                        startActivity(new Intent(AccountActivity.this, MyWishListActivity.class));
                         break;
                     case 2:
                         break;

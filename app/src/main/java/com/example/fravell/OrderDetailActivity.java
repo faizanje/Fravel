@@ -40,10 +40,44 @@ public class OrderDetailActivity extends AppCompatActivity {
         order = (Order) getIntent().getSerializableExtra(Constants.KEY_ORDER);
 
         cartItems.addAll(order.getCartItemArrayList());
-        adapter = new OrderedProductAdapter(this, cartItems);
+        adapter = new OrderedProductAdapter(this, cartItems, order.getOrderStatus().equals(OrderStatus.DELIVERED.getStatus()));
         binding.recyclerView2.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerView2.setAdapter(adapter);
+
+        setListeners();
         populateViews();
+    }
+
+    private void setListeners() {
+        adapter.setOnCartItemClickListener(new OrderedProductAdapter.OnCartItemClickListener() {
+            @Override
+            public void onCartItemClicked(int position, CartItem cartItem) {
+                Intent intent = new Intent(OrderDetailActivity.this, WriteReviewScreen.class);
+                intent.putExtra(Constants.KEY_CART_ITEM, cartItem);
+                intent.putExtra(Constants.KEY_CART_ITEM_INDEX, order.getCartItemArrayList().indexOf(cartItem));
+                intent.putExtra(Constants.KEY_ORDER_ID, order.getOrderId());
+                startActivity(intent);
+            }
+        });
+
+        binding.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogUtil.showSimpleProgressDialog(OrderDetailActivity.this);
+                order.setOrderStatus(OrderStatus.DELIVERED.getStatus());
+                FirebaseUtils.getOrdersReference()
+                        .child(order.getOrderId())
+                        .setValue(order)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                DialogUtil.closeProgressDialog();
+                                Toast.makeText(OrderDetailActivity.this, "Order marked as completed", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
+                        });
+            }
+        });
     }
 
     private void populateViews() {
@@ -63,41 +97,48 @@ public class OrderDetailActivity extends AppCompatActivity {
         String shippingAddress = String.format("%s, %s, %s", order.getUserAddress().getAddress(), order.getUserAddress().getCity(), order.getUserAddress().getCountry());
         binding.tvShippingAddress.setText(shippingAddress);
 
-        if (order.getOrderStatus().equals(OrderStatus.DELIVERED.getStatus())) {
-            if (order.hasFeedbackLeft()) {
-                binding.button.setVisibility(View.GONE);
-            } else {
-                binding.button.setText("Leave feedback");
-                binding.button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(OrderDetailActivity.this, WriteReviewScreen.class);
-                        intent.putExtra(Constants.KEY_ORDER, order);
-                        startActivity(intent);
-                    }
-                });
-            }
 
-        } else if (order.getOrderStatus().equals(OrderStatus.PROCESSING.getStatus())) {
-            binding.button.setText("Mark as delivered");
-            binding.button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    DialogUtil.showSimpleProgressDialog(OrderDetailActivity.this);
-                    order.setOrderStatus(OrderStatus.DELIVERED.getStatus());
-                    FirebaseUtils.getOrdersReference()
-                            .child(order.getOrderId())
-                            .setValue(order)
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    DialogUtil.closeProgressDialog();
-                                    Toast.makeText(OrderDetailActivity.this, "Order marked as completed", Toast.LENGTH_SHORT).show();
-                                    finish();
-                                }
-                            });
-                }
-            });
-        }
+
+
+        boolean showButton = order.getOrderStatus().equals(OrderStatus.PROCESSING.getStatus());
+        binding.button.setVisibility(showButton ? View.VISIBLE : View.GONE);
+
+
+//        if (order.getOrderStatus().equals(OrderStatus.DELIVERED.getStatus())) {
+//            if (order.hasFeedbackLeft()) {
+//                binding.button.setVisibility(View.GONE);
+//            } else {
+//                binding.button.setText("Leave feedback");
+//                binding.button.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        Intent intent = new Intent(OrderDetailActivity.this, WriteReviewScreen.class);
+//                        intent.putExtra(Constants.KEY_ORDER, order);
+//                        startActivity(intent);
+//                    }
+//                });
+//            }
+//
+//        } else if (order.getOrderStatus().equals(OrderStatus.PROCESSING.getStatus())) {
+//            binding.button.setText("Mark as delivered");
+//            binding.button.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    DialogUtil.showSimpleProgressDialog(OrderDetailActivity.this);
+//                    order.setOrderStatus(OrderStatus.DELIVERED.getStatus());
+//                    FirebaseUtils.getOrdersReference()
+//                            .child(order.getOrderId())
+//                            .setValue(order)
+//                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                @Override
+//                                public void onComplete(@NonNull Task<Void> task) {
+//                                    DialogUtil.closeProgressDialog();
+//                                    Toast.makeText(OrderDetailActivity.this, "Order marked as completed", Toast.LENGTH_SHORT).show();
+//                                    finish();
+//                                }
+//                            });
+//                }
+//            });
+//        }
     }
 }

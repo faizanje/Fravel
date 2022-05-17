@@ -15,6 +15,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         FirebaseDatabase.getInstance().setLogLevel(Logger.Level.DEBUG);
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         PaymentConfiguration.init(
                 getApplicationContext(),
                 Constants.STRIPE_PUBLISHABLE_KEY

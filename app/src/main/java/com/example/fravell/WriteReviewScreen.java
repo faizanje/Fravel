@@ -12,12 +12,11 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.fravell.Models.Order;
+import com.example.fravell.Models.CartItem;
 import com.example.fravell.Models.Review;
 import com.example.fravell.Utils.Constants;
 import com.example.fravell.Utils.DBUtils;
@@ -51,11 +50,14 @@ import permissions.dispatcher.RuntimePermissions;
 public class WriteReviewScreen extends AppCompatActivity {
 
     Button submitrev;
-    Order order;
+    //    Order order;
+    CartItem cartItem;
     ActivityResultLauncher<Intent> someActivityResultLauncher;
     File selectedFile;
     ActivityWriteReviewScreenBinding binding;
     Review review = new Review();
+    String orderId;
+    int cartItemIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +66,9 @@ public class WriteReviewScreen extends AppCompatActivity {
         binding = ActivityWriteReviewScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        order = (Order) getIntent().getSerializableExtra(Constants.KEY_ORDER);
+        cartItem = (CartItem) getIntent().getSerializableExtra(Constants.KEY_CART_ITEM);
+        orderId = getIntent().getStringExtra(Constants.KEY_ORDER_ID);
+        cartItemIndex = getIntent().getIntExtra(Constants.KEY_CART_ITEM_INDEX, 0);
         submitrev = findViewById(R.id.submitreviewbtn);
         submitrev.setOnClickListener(view -> {
 
@@ -78,7 +82,7 @@ public class WriteReviewScreen extends AppCompatActivity {
                     .setTimeInMillis(System.currentTimeMillis())
                     .setUserId(FirebaseAuth.getInstance().getUid())
                     .setUserName(DBUtils.readLoggedInUser().name)
-                    .setOrderId(order.getOrderId())
+                    .setOrderId(cartItem.getProduct().getId())
                     .setRating(rating)
                     .setReview(reviewStr);
             submitFeedback();
@@ -93,33 +97,6 @@ public class WriteReviewScreen extends AppCompatActivity {
                 WriteReviewScreenPermissionsDispatcher.pickFileWithPermissionCheck(WriteReviewScreen.this);
             }
         });
-
-        someActivityResultLauncher = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    if (result.getResultCode() == Activity.RESULT_OK) {
-                        // There are no request codes
-                        Intent data = result.getData();
-                        if (data != null) {
-                            Uri uri = data.getData();
-
-                            Log.d(Constants.TAG, "onActivityResult: " + uri);
-                            try {
-                                Uri correctUri = FileUtils.getFilePathFromUri(WriteReviewScreen.this, uri);
-                                selectedFile = new File(correctUri.getPath());
-                                Log.d(Constants.TAG, "onCreate: " + selectedFile.getAbsolutePath());
-                                Log.d(Constants.TAG, "onCreate: " + selectedFile.getName());
-
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                                Log.d(Constants.TAG, "onCreate: " + e.getMessage());
-                            }
-
-                        } else {
-                            Log.d(Constants.TAG, "onActivityResult: dara is null");
-                        }
-                    }
-                });
     }
 
     private void submitFeedback() {
@@ -183,14 +160,21 @@ public class WriteReviewScreen extends AppCompatActivity {
     }
 
     private void submitFeedbackNow() {
-        order.setFeedbackLeft(true);
-        FirebaseUtils.getOrdersReference()
-                .child(order.getOrderId())
-                .setValue(order);
+        cartItem.setFeedbackLeft(true);
+        DatabaseReference reference = FirebaseUtils.getOrdersReference()
+                .child(orderId)
+                .child("cartItemArrayList")
+                .child(String.valueOf(cartItemIndex));
+
+        Log.d(Constants.TAG, "submitFeedbackNow: " + reference);
+        Log.d(Constants.TAG, "submitFeedbackNow cartItem: " + cartItem);
+
+
+        reference.setValue(cartItem);
 
         DatabaseReference databaseReference = FirebaseUtils.getReviewsReference()
-                .child(order.getOrderId())
-                .push();
+                .child(cartItem.getProduct().getId())
+                .child(FirebaseAuth.getInstance().getUid());
         review.setReviewId(databaseReference.getKey());
         databaseReference.setValue(review)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {

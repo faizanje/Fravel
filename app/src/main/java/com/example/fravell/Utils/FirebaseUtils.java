@@ -5,7 +5,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class FirebaseUtils {
-    public static DatabaseReference getCurrentUserAddressReference(){
+    public static DatabaseReference getCurrentUserAddressReference() {
         return FirebaseDatabase.getInstance().getReference()
                 .child("users")
                 .child(FirebaseAuth.getInstance().getUid())
@@ -26,28 +26,43 @@ public class FirebaseUtils {
                 .child("card");
     }
 
-    public static DatabaseReference getCompletedOrdersReference(){
+    public static DatabaseReference getCompletedOrdersReference() {
         return FirebaseDatabase.getInstance().getReference()
                 .child("users")
                 .child(FirebaseAuth.getInstance().getUid())
                 .child("completed-orders");
     }
 
-    public static DatabaseReference getOrdersReference(){
+    public static DatabaseReference getOrdersReference() {
         return FirebaseDatabase.getInstance().getReference()
                 .child("users")
                 .child(FirebaseAuth.getInstance().getUid())
                 .child("orders");
     }
 
-    public static DatabaseReference getReviewsReference(){
-        return FirebaseDatabase.getInstance().getReference()
+    public static DatabaseReference getReviewsReference() {
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference()
                 .child("reviews");
+//        databaseReference.keepSynced(true);
+        return  databaseReference;
     }
 
 
     public static DatabaseReference getAvailableFravellersReference() {
         return FirebaseDatabase.getInstance().getReference()
                 .child("fravellers");
+    }
+
+    public static DatabaseReference getFavouritesReference() {
+        return FirebaseDatabase.getInstance().getReference()
+                .child("users")
+                .child(FirebaseAuth.getInstance().getUid())
+                .child("favorites");
+    }
+
+    public static DatabaseReference getCategoriesReference() {
+        return FirebaseDatabase.getInstance().getReference()
+                .child("categories");
     }
 }

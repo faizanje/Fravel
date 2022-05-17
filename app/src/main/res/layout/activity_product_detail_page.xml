@@ -7,6 +7,7 @@
     tools:context=".ProductDetailPage">
 
     <LinearLayout
+        android:paddingHorizontal="16sp"
         android:id="@+id/productdetailpagemainlinear"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,7 +21,8 @@
             android:layout_marginTop="50dp"
             tools:srcCompat="@drawable/dates" />
 
-        <LinearLayout
+        <RelativeLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp">
@@ -29,22 +31,24 @@
                 android:id="@+id/spinner2"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
                 android:background="@android:drawable/btn_dropdown"
                 android:spinnerMode="dropdown" />
 
-            <ImageView
-                android:layout_width="51dp"
-                android:layout_height="47dp"
-                android:layout_marginLeft="170dp"
-                android:layout_marginTop="20dp"
-                app:srcCompat="@drawable/favorites"
+            <CheckBox
+                android:id="@+id/btnFavourite"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop"
+
+                android:button="@drawable/selector_favourite"
+                app:srcCompat="@drawable/selector_favourite"
                 tools:layout_editor_absoluteX="138dp"
                 tools:layout_editor_absoluteY="44dp" />
 
 
-        </LinearLayout>
+        </RelativeLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
 
@@ -116,12 +120,12 @@ Short Dress jkdfhjkgaskfhdaklhdfkh kajdfhajklsd askfhasdjkfh lakjshdfjklasdf kah
             android:layout_marginTop="20dp">
 
             <TextView
-                android:id="@+id/reviewsbtn"
+                android:id="@+id/tvReviews"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
-                android:text="Reviews"
+                android:text="Reviews (0)"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
