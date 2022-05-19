@@ -147,6 +147,13 @@ public class CheckoutScreen extends AppCompatActivity {
         );
     }
 
+    /**
+     * Get client secret from server
+     * Charge stripe by providing card details to stripe
+     * Observe the callback function that stripe provides
+     * 1. If failed, then throw the error and show toast message
+     * 2. If succes, then save user details in user reference in database
+     * */
     private void onPaymentResult(PaymentResult paymentResult) {
         String message = "";
         boolean success = false;
@@ -168,8 +175,6 @@ public class CheckoutScreen extends AppCompatActivity {
         } else {
             saveOrderInDatabase();
         }
-
-
     }
 
     private void saveOrderInDatabase() {

@@ -40,6 +40,13 @@ public class FirebaseUtils {
                 .child("orders");
     }
 
+    public static DatabaseReference getCustomOrdersReference() {
+        return FirebaseDatabase.getInstance().getReference()
+                .child("users")
+                .child(FirebaseAuth.getInstance().getUid())
+                .child("custom-orders");
+    }
+
     public static DatabaseReference getReviewsReference() {
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference()

@@ -1,100 +1,76 @@
 package com.example.fravell.Models;
 
-import java.io.Serializable;
+public class CustomOrder {
+    String orderId;
+    double totalAmount;
+    long timeInMillis;
+    String orderStatus;
+    FravellerCriteria fravellerCriteria;
+    AvailableFraveller availableFraveller;
 
-public class CustomOrder implements Serializable {
-    String id;
-    String toCity;
-    String fromCity;
-    long startDate;
-    long endDate;
-    String describeTheItem;
-    String additionalNotes;
-    String userId;
-
-    public String getId() {
-        return id;
-    }
-
-    public CustomOrder setId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    public String getToCity() {
-        return toCity;
-    }
-
-    public CustomOrder setToCity(String toCity) {
-        this.toCity = toCity;
-        return this;
-    }
-
-    public String getFromCity() {
-        return fromCity;
-    }
-
-    public CustomOrder setFromCity(String fromCity) {
-        this.fromCity = fromCity;
-        return this;
-    }
-
-    public long getStartDate() {
-        return startDate;
-    }
-
-    public CustomOrder setStartDate(long startDate) {
-        this.startDate = startDate;
-        return this;
-    }
-
-    public long getEndDate() {
-        return endDate;
-    }
-
-    public CustomOrder setEndDate(long endDate) {
-        this.endDate = endDate;
-        return this;
-    }
-
-    public String getDescribeTheItem() {
-        return describeTheItem;
-    }
-
-    public CustomOrder setDescribeTheItem(String describeTheItem) {
-        this.describeTheItem = describeTheItem;
-        return this;
-    }
-
-    public String getAdditionalNotes() {
-        return additionalNotes;
-    }
-
-    public CustomOrder setAdditionalNotes(String additionalNotes) {
-        this.additionalNotes = additionalNotes;
-        return this;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public CustomOrder setUserId(String userId) {
-        this.userId = userId;
-        return this;
+    public CustomOrder(String orderId, double totalAmount, long timeInMillis, String orderStatus, FravellerCriteria fravellerCriteria, AvailableFraveller availableFraveller) {
+        this.orderId = orderId;
+        this.totalAmount = totalAmount;
+        this.timeInMillis = timeInMillis;
+        this.orderStatus = orderStatus;
+        this.fravellerCriteria = fravellerCriteria;
+        this.availableFraveller = availableFraveller;
     }
 
     public CustomOrder() {
     }
 
-    public CustomOrder(String id, String toCity, String fromCity, long startDate, long endDate, String describeTheItem, String additionalNotes, String userId) {
-        this.id = id;
-        this.toCity = toCity;
-        this.fromCity = fromCity;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.describeTheItem = describeTheItem;
-        this.additionalNotes = additionalNotes;
-        this.userId = userId;
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public CustomOrder setOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    public double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public CustomOrder setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
+        return this;
+    }
+
+    public long getTimeInMillis() {
+        return timeInMillis;
+    }
+
+    public CustomOrder setTimeInMillis(long timeInMillis) {
+        this.timeInMillis = timeInMillis;
+        return this;
+    }
+
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public CustomOrder setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+        return this;
+    }
+
+    public FravellerCriteria getFravellerCriteria() {
+        return fravellerCriteria;
+    }
+
+    public CustomOrder setFravellerCriteria(FravellerCriteria fravellerCriteria) {
+        this.fravellerCriteria = fravellerCriteria;
+        return this;
+    }
+
+    public AvailableFraveller getAvailableFraveller() {
+        return availableFraveller;
+    }
+
+    public CustomOrder setAvailableFraveller(AvailableFraveller availableFraveller) {
+        this.availableFraveller = availableFraveller;
+        return this;
     }
 }

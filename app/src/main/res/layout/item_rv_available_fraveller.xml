@@ -60,15 +60,16 @@
                 android:textStyle="bold" />
 
             <LinearLayout
+                android:gravity="center"
+                android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
                     android:id="@+id/tvStartDate"
-                    android:layout_width="105dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="10"
                     android:inputType="date"
                     android:text="DD/MM/YY" />
 
@@ -76,28 +77,26 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="  -  "
                     android:textColor="@color/black"
                     android:textStyle="bold" />
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
                     android:id="@+id/tvEndDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
                     android:inputType="date"
                     android:text="DD/MM/YY" />
 
             </LinearLayout>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnAccept"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:background="@drawable/my_btn_card"
-                android:text="Request Chat"
+                android:text="Accept"
                 android:textColor="@color/main" />
         </LinearLayout>
 

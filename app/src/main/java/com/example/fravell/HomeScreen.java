@@ -78,7 +78,8 @@ public class HomeScreen extends AppCompatActivity {
 
     private void getData() {
         Log.d(Constants.TAG, "getData: Called");
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("categories");
+        DatabaseReference databaseReference = FirebaseDatabase
+                .getInstance().getReference().child("categories");
         Log.d(Constants.TAG, "getData: " + databaseReference.toString());
 
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {

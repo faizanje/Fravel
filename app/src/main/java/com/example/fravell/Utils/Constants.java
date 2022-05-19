@@ -8,7 +8,8 @@ public class Constants {
 
     public static final String DATE_FORMAT= "dd-MM-yyyy";
     public static final String DATE_FORMAT_2= "MMMM dd, yyyy";
-    public static final String STRIPE_PUBLISHABLE_KEY = "pk_test_51HICEULBnGF2noZqiD4dgSHxm9gBJkGLvQXuqVfn9roV4qOSZaX1Ksudl7nQaQuEQf3FtbXQ4h2j0kF3Xdap9dfi00saU5TkbN";
+//    public static final String STRIPE_PUBLISHABLE_KEY = "pk_test_51HICEULBnGF2noZqiD4dgSHxm9gBJkGLvQXuqVfn9roV4qOSZaX1Ksudl7nQaQuEQf3FtbXQ4h2j0kF3Xdap9dfi00saU5TkbN";
+    public static final String STRIPE_PUBLISHABLE_KEY = "pk_test_51KNgHwJlz31aQlVGyud5UfuQxp1hlOnff5tebpd8aOsdXHU3L48f9O89kfAVrGGJfYC3bIQemmBAMkRDA2TvUW0N00XtBbVzR8";
 
     /* Server */
 //    public static final String BASE_URL = "http://192.168.10.4:8080";

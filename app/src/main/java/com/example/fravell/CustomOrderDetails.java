@@ -12,7 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.util.Pair;
 
-import com.example.fravell.Models.CustomOrder;
+import com.example.fravell.Models.FravellerCriteria;
 import com.example.fravell.Utils.Constants;
 import com.example.fravell.Utils.DateTimeUtils;
 import com.example.fravell.databinding.ActivityCustomOrderDetailsBinding;
@@ -107,9 +107,9 @@ public class CustomOrderDetails extends AppCompatActivity {
                 String uid = FirebaseAuth.getInstance().getUid();
                 long fromDate = selection.first;
                 long toDate = selection.second;
-                CustomOrder customOrder = new CustomOrder(UUID.randomUUID().toString(), toCity, fromCity, fromDate, toDate, description, additionalNotes, uid);
+                FravellerCriteria fravellerCriteria = new FravellerCriteria(UUID.randomUUID().toString(), toCity, fromCity, fromDate, toDate, description, additionalNotes, uid);
                 Intent intent = new Intent(CustomOrderDetails.this, EnrouteFravellers.class);
-                intent.putExtra(Constants.KEY_CUSTOM_ORDER, customOrder);
+                intent.putExtra(Constants.KEY_CUSTOM_ORDER, fravellerCriteria);
                 startActivity(intent);
 
             }

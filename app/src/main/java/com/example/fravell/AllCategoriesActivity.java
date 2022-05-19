@@ -52,7 +52,8 @@ public class AllCategoriesActivity extends AppCompatActivity {
     }
 
     private void getData() {
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("categories");
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance()
+                .getReference().child("categories");
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

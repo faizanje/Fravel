@@ -26,6 +26,7 @@ public class AccountActivity extends AppCompatActivity {
 
         accountItems = new AccountItem[]{
                 new AccountItem("My Orders", R.drawable.profile),
+                new AccountItem("Custom Orders", R.drawable.profile),
                 new AccountItem("My Wishlist", R.drawable.heart),
                 new AccountItem("Settings", R.drawable.settings),
                 new AccountItem("Help", R.drawable.chat),
@@ -50,15 +51,10 @@ public class AccountActivity extends AppCompatActivity {
                         startActivity(new Intent(AccountActivity.this, MyOrdersActivity.class));
                         break;
                     case 1:
-                        startActivity(new Intent(AccountActivity.this, MyWishListActivity.class));
+                        startActivity(new Intent(AccountActivity.this, MyCustomOrderActivity.class));
                         break;
                     case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
+                        startActivity(new Intent(AccountActivity.this, MyWishListActivity.class));
                         break;
 
 

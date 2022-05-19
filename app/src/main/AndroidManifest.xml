@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Fravell"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".MyCustomOrderActivity"
+            android:exported="false" />
+        <activity
             android:name=".MyWishListActivity"
             android:exported="false" />
         <activity

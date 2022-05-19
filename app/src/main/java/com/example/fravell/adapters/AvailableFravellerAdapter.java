@@ -2,6 +2,7 @@ package com.example.fravell.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,6 +41,15 @@ public class AvailableFravellerAdapter extends RecyclerView.Adapter<AvailableFra
         holder.binding.tvUsername.setText(availableFraveller.getName());
         holder.binding.tvStartDate.setText(DateTimeUtils.millisecondsToDate(availableFraveller.getFromDateInMillis()));
         holder.binding.tvEndDate.setText(DateTimeUtils.millisecondsToDate(availableFraveller.getToDateInMillis()));
+
+        holder.binding.btnAccept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(onAvailableFravellerClickListener != null){
+                    onAvailableFravellerClickListener.onAvailableFravellerClicked(position,availableFraveller);
+                }
+            }
+        });
     }
 
 
